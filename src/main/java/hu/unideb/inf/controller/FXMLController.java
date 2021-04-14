@@ -49,49 +49,49 @@ public class FXMLController {
              Alert error = new Alert(AlertType.ERROR);
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
-             error.setContentText("Hiba");
+             error.setContentText("Add meg az edző nevét!");
              error.show();
         }
         if(konditeremnev.getLength() == 0) {
              Alert error = new Alert(AlertType.ERROR);
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
-             error.setContentText("Hiba");
+             error.setContentText("Add meg a konditermet!");
              error.show();
         }
         if(helyszin.getLength() == 0) {
              Alert error = new Alert(AlertType.ERROR);
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
-             error.setContentText("Hiba");
+             error.setContentText("Add meg a helyszínt!");
              error.show();
         }
         if(foglalkozas.getLength() == 0) {
              Alert error = new Alert(AlertType.ERROR);
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
-             error.setContentText("Hiba");
+             error.setContentText("Add meg a foglalkozást!");
              error.show();
         }
         if(foglalkozasnapja.getLength() == 0) {
              Alert error = new Alert(AlertType.ERROR);
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
-             error.setContentText("Hiba");
+             error.setContentText("Add meg a napot!");
              error.show();
         }
         if(idopont.getLength() == 0) {
              Alert error = new Alert(AlertType.ERROR);
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
-             error.setContentText("Hiba");
+             error.setContentText("Add meg az időpontot!");
              error.show();
         }
         if(hanyfo.getLength() == 0) {
              Alert error = new Alert(AlertType.ERROR);
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
-             error.setContentText("Hiba");
+             error.setContentText("Add meg a létszámot");
              error.show();
         }
         
