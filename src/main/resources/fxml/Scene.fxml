@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="882.0" prefWidth="1083.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="882.0" prefWidth="1083.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLScene">
    <children>
       <TabPane prefHeight="882.0" prefWidth="1083.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -155,8 +155,8 @@
                               <Label text="Edző szerint: " GridPane.halignment="CENTER" />
                               <Label text="Időpont szerint: " GridPane.columnIndex="2" GridPane.halignment="CENTER" />
                               <Label text="Foglalkozás szerint: " GridPane.columnIndex="4" GridPane.halignment="CENTER" />
-                              <Button mnemonicParsing="false" text="Keresés" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Újra" GridPane.columnIndex="7" GridPane.halignment="CENTER" />
+                              <Button fx:id="keresButton" mnemonicParsing="false" onAction="#keres" text="Keresés" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+                              <Button fx:id="ujraButton" mnemonicParsing="false" onAction="#ujra" prefHeight="25.0" prefWidth="80.0" text="Újra" GridPane.columnIndex="7" GridPane.halignment="CENTER" />
                               <TextField fx:id="edzoKeresText" GridPane.columnIndex="1" />
                               <TextField fx:id="idopKeresText" GridPane.columnIndex="3" />
                               <TextField fx:id="foglalkKeresText" GridPane.columnIndex="5" />
