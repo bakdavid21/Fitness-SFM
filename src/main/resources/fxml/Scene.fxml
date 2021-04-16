@@ -16,13 +16,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="882.0" prefWidth="1083.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLScene">
    <children>
-      <TabPane prefHeight="882.0" prefWidth="1083.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tab" prefHeight="882.0" prefWidth="1083.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
             <Tab text="Konditerem 1">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <GridPane gridLinesVisible="true" layoutY="1.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                        <GridPane gridLinesVisible="true" layoutY="1.0" prefHeight="853.0" prefWidth="1083.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -135,7 +135,7 @@
             </Tab>
           <Tab text="Keresés">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0">
                      <children>
                         <GridPane layoutX="31.0" layoutY="108.0" prefHeight="30.0" prefWidth="1040.0" AnchorPane.bottomAnchor="788.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0">
                           <columnConstraints>
@@ -147,6 +147,7 @@
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -160,58 +161,10 @@
                               <TextField fx:id="edzoKeresText" GridPane.columnIndex="1" />
                               <TextField fx:id="idopKeresText" GridPane.columnIndex="3" />
                               <TextField fx:id="foglalkKeresText" GridPane.columnIndex="5" />
+                              <Button mnemonicParsing="false" text="Törlés" GridPane.columnIndex="8" GridPane.halignment="CENTER" />
                            </children>
                         </GridPane>
-                        <GridPane layoutX="157.0" layoutY="340.0" prefHeight="132.0" prefWidth="718.0" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label text="edző neve" GridPane.halignment="CENTER" />
-                              <Label text="konditerem" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                              <Label text="foglalkozás" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-                              <Label text="dátum" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                              <Label text="időpont" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
-                              <Label text="hány fő részére" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
-                              <TextArea fx:id="edzoText_1" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-                              <TextArea fx:id="edzoText_2" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
-                              <TextArea fx:id="edzoText_3" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" />
-                              <TextArea fx:id="edzoText_4" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4" />
-                              <TextArea fx:id="kondiText_1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextArea fx:id="kondiText_2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextArea fx:id="kondiText_3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextArea fx:id="kondiText_4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextArea fx:id="foglalkText_1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <TextArea fx:id="foglalkText_2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <TextArea fx:id="foglalkText_3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <TextArea fx:id="foglalkText_4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                              <TextArea fx:id="datumText_1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                              <TextArea fx:id="datumText_2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                              <TextArea fx:id="datumText_3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                              <TextArea fx:id="datumText_4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                              <TextArea fx:id="idopText_1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                              <TextArea fx:id="idopText_2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                              <TextArea fx:id="idopText_3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                              <TextArea fx:id="idopText_4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                              <TextArea fx:id="letszamText_1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                              <TextArea fx:id="letszamText_2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                              <TextArea fx:id="letszamText_3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                              <TextArea fx:id="letszamText_4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                           </children>
-                        </GridPane>
-                        <GridPane layoutX="79.0" layoutY="116.0" prefHeight="30.0" prefWidth="872.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+                        <GridPane layoutX="100.0" layoutY="155.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -225,6 +178,11 @@
                               <Label text="Megadott szempontok:" GridPane.halignment="CENTER" />
                            </children>
                         </GridPane>
+                        <TextArea fx:id="talalatText" editable="false" layoutX="39.0" layoutY="276.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextArea>
                      </children></AnchorPane>
             </content>
           </Tab>

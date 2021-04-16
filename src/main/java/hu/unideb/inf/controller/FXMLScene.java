@@ -12,18 +12,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import static org.hibernate.annotations.common.util.impl.LoggerFactory.logger;
 
 /**
  *
@@ -31,6 +27,9 @@ import static org.hibernate.annotations.common.util.impl.LoggerFactory.logger;
  */
 public class FXMLScene 
 {
+
+    @FXML
+    private TabPane tabPane;
     
     @FXML
     private Button keresButton;
@@ -46,122 +45,66 @@ public class FXMLScene
 
     @FXML
     private TextField foglalkKeresText;
-
-    @FXML
-    private TextArea edzoText_1;
-
-    @FXML
-    private TextArea edzoText_2;
-
-    @FXML
-    private TextArea edzoText_3;
-
-    @FXML
-    private TextArea edzoText_4;
-
-    @FXML
-    private TextArea kondiText_1;
-
-    @FXML
-    private TextArea kondiText_2;
-
-    @FXML
-    private TextArea kondiText_3;
-
-    @FXML
-    private TextArea kondiText_4;
-
-    @FXML
-    private TextArea foglalkText_1;
-
-    @FXML
-    private TextArea foglalkText_2;
-
-    @FXML
-    private TextArea foglalkText_3;
-
-    @FXML
-    private TextArea foglalkText_4;
-
-    @FXML
-    private TextArea datumText_1;
-
-    @FXML
-    private TextArea datumText_2;
-
-    @FXML
-    private TextArea datumText_3;
-
-    @FXML
-    private TextArea datumText_4;
-
-    @FXML
-    private TextArea idopText_1;
-
-    @FXML
-    private TextArea idopText_2;
-
-    @FXML
-    private TextArea idopText_3;
-
-    @FXML
-    private TextArea idopText_4;
-
-    @FXML
-    private TextArea letszamText_1;
-
-    @FXML
-    private TextArea letszamText_2;
-
-    @FXML
-    private TextArea letszamText_3;
-
-    @FXML
-    private TextArea letszamText_4;
     
+    @FXML
+    private TextArea talalatText;
+    
+    String edzo;
+    String ido;
+    String foglalk;
+    
+    List<String> list = new ArrayList();
+    
+    private StringBuilder sb;
+    
+    //tabPane.autosize();
+
     @FXML
     void keres(ActionEvent event) 
     {    
-       List<String> list = new ArrayList();
-        
-        try(Connection con = getConnection())
-        {
-            if(edzoKeresText.getLength() != 0)
-            {
-                String keres = "select * from REGISTRATION where NÉV = '" + edzoKeresText.getText() + "'";
-                Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(keres);
-                while(rs.next())
-                {
-                   list.add(rs.getString("NÉV"));
-                   list.add(rs.getString("KONDITEREM"));
-                   list.add(rs.getString("FOGLALKOZAS"));
-                   list.add(rs.getString("IDOPONT"));
-                   list.add(rs.getString("FOGLALKOZASNAPJA"));
-                   list.add(rs.getString("HANYFO"));
-                }
-                
-               System.out.println(Arrays.asList(list.toArray()));
-               
-               edzoText_1.setText(list.get(0));
-               kondiText_1.setText(list.get(1));
-               foglalkText_1.setText(list.get(2));
-               datumText_1.setText(list.get(3));
-               idopText_1.setText(list.get(4));
-               letszamText_1.setText(list.get(5));
+        //List<String> list = new ArrayList();
+        sb  = new StringBuilder("");
+        edzo = edzoKeresText.getText().length() != 0 ? " NÉV = '" + edzoKeresText.getText() + "'" : " NÉV IS NOT NULL";
+        ido = idopKeresText.getText().length() != 0 ? " AND IDOPONT = '" + idopKeresText.getText() + "'" : " AND IDOPONT IS NOT NULL";
+        foglalk = foglalkKeresText.getText().length() != 0 ? " AND FOGLALKOZAS = '" + foglalkKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
 
+        try
+        {
+            Connection con = getConnection();
+            String keres = "select * from REGISTRATION where " + edzo + ido + foglalk;
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(keres);
+            //ObservableList<String> row = FXCollections.observableArrayList();
+            //row.add(rs.getString("NÉV"))
+            while(rs.next())
+            {                
+                sb.append("Edző: " + rs.getString("NÉV")+ "\t");
+                sb.append("Foglalkozás: " + rs.getString("FOGLALKOZAS")+ "\t");
+                sb.append("Konditerem: " + rs.getString("Konditerem") + "\t");
+                sb.append("Max létszám: " + rs.getString("HANYFO") + "\t" );
+                sb.append("Terem/szoba : " + rs.getString("HELYSZIN") + "\t");;
+                sb.append("Dátum: " + rs.getString("IDOPONT") + "\t");
+                sb.append( "Foglalkozás napja: " + rs.getString("FOGLALKOZASNAPJA") + "\n\n");
             } 
+            
+            talalatText.setText(sb.toString());
         }
         catch (SQLException | ClassNotFoundException ex)
         {
               System.out.println(ex.getMessage());
         }
-        
+         
     }
+    
+    
 
     @FXML
-    void ujra(ActionEvent event) {
-
+    void ujra(ActionEvent event) 
+    {
+        talalatText.clear();
+        edzoKeresText.clear();
+        idopKeresText.clear();
+        foglalkKeresText.clear();
     }
 
     private Connection getConnection() throws ClassNotFoundException, SQLException 
