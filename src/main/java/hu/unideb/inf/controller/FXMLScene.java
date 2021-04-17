@@ -92,13 +92,13 @@ public class FXMLScene
                 
                 while(rs.next())
                 {                
-                    sb.append("Edző: " + rs.getString("NÉV")+ "\t");
-                    sb.append("Foglalkozás: " + rs.getString("FOGLALKOZAS")+ "\t");
-                    sb.append("Konditerem: " + rs.getString("Konditerem") + "\t");
-                    sb.append("Max létszám: " + rs.getString("HANYFO") + "\t" );
-                    sb.append("Terem/szoba : " + rs.getString("HELYSZIN") + "\t");;
-                    sb.append("Dátum: " + rs.getString("IDOPONT") + "\t");
-                    sb.append( "Foglalkozás napja: " + rs.getString("FOGLALKOZASNAPJA") + "\n\n");
+                    sb.append("Edző: " + rs.getString("NÉV")+ "\t\t");
+                    sb.append("Foglalkozás: " + rs.getString("FOGLALKOZAS")+ "\t\t");
+                    sb.append("Konditerem: " + rs.getString("Konditerem") + "\t\t");
+                    sb.append("Max létszám: " + rs.getString("HANYFO") + "\t\t" );
+                    sb.append("Terem/szoba : " + rs.getString("HELYSZIN") + "\t\t");;
+                    sb.append("Időpont: " + rs.getString("IDOPONT") + "\t\t");
+                    sb.append("Foglalkozás napja: " + rs.getString("FOGLALKOZASNAPJA") + "\n\n");
                 } 
 
                 if(sb.length() == 0)
