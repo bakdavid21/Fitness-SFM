@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -67,36 +69,58 @@ public class FXMLScene
         edzo = edzoKeresText.getText().length() != 0 ? " NÉV = '" + edzoKeresText.getText() + "'" : " NÉV IS NOT NULL";
         ido = idopKeresText.getText().length() != 0 ? " AND IDOPONT = '" + idopKeresText.getText() + "'" : " AND IDOPONT IS NOT NULL";
         foglalk = foglalkKeresText.getText().length() != 0 ? " AND FOGLALKOZAS = '" + foglalkKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
+        
+        if(edzoKeresText.getText().length() == 0 && idopKeresText.getText().length() == 0 && foglalkKeresText.getText().length() == 0)
+        {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Keresés Hiba");
+            alert.setHeaderText(null);
+            alert.setContentText("Legalább egy keresési szempontot meg kell adnod!");
 
-        try
-        {
-            Connection con = getConnection();
-            String keres = "select * from REGISTRATION where " + edzo + ido + foglalk;
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(keres);
-            //ObservableList<String> row = FXCollections.observableArrayList();
-            //row.add(rs.getString("NÉV"))
-            while(rs.next())
-            {                
-                sb.append("Edző: " + rs.getString("NÉV")+ "\t");
-                sb.append("Foglalkozás: " + rs.getString("FOGLALKOZAS")+ "\t");
-                sb.append("Konditerem: " + rs.getString("Konditerem") + "\t");
-                sb.append("Max létszám: " + rs.getString("HANYFO") + "\t" );
-                sb.append("Terem/szoba : " + rs.getString("HELYSZIN") + "\t");;
-                sb.append("Dátum: " + rs.getString("IDOPONT") + "\t");
-                sb.append( "Foglalkozás napja: " + rs.getString("FOGLALKOZASNAPJA") + "\n\n");
-            } 
-            
-            talalatText.setText(sb.toString());
+            alert.showAndWait();
         }
-        catch (SQLException | ClassNotFoundException ex)
+        else
         {
-              System.out.println(ex.getMessage());
+            try
+            {
+                Connection con = getConnection();
+                String keres = "select * from REGISTRATION where " + edzo + ido + foglalk;
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(keres);
+                //ObservableList<String> row = FXCollections.observableArrayList();
+                //row.add(rs.getString("NÉV"))
+                
+                while(rs.next())
+                {                
+                    sb.append("Edző: " + rs.getString("NÉV")+ "\t");
+                    sb.append("Foglalkozás: " + rs.getString("FOGLALKOZAS")+ "\t");
+                    sb.append("Konditerem: " + rs.getString("Konditerem") + "\t");
+                    sb.append("Max létszám: " + rs.getString("HANYFO") + "\t" );
+                    sb.append("Terem/szoba : " + rs.getString("HELYSZIN") + "\t");;
+                    sb.append("Dátum: " + rs.getString("IDOPONT") + "\t");
+                    sb.append( "Foglalkozás napja: " + rs.getString("FOGLALKOZASNAPJA") + "\n\n");
+                } 
+
+                if(sb.length() == 0)
+                {
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Keresés Hiba");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Nem található a keresésnek megfelelő elem!");
+
+                    alert.showAndWait();
+                }
+                else
+                {
+                    talalatText.setText(sb.toString());
+                }
+            }
+            catch (SQLException | ClassNotFoundException ex)
+            {
+                  System.out.println(ex.getMessage());
+            }
         }
-         
-    }
-    
-    
+    }    
 
     @FXML
     void ujra(ActionEvent event) 
