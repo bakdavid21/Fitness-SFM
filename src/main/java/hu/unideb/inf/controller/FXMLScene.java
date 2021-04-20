@@ -6,6 +6,7 @@
 package hu.unideb.inf.controller;
 
 
+import hu.unideb.inf.model.Registration;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,6 +14,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -20,8 +24,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  *
@@ -49,23 +56,39 @@ public class FXMLScene
     private TextField foglalkKeresText;
     
     @FXML
-    private TextArea talalatText;
+    private TableView<Registration> tableView;
+
+    @FXML
+    private TableColumn<Registration, String> edzoCol;
+
+    @FXML
+    private TableColumn<Registration, String> foglalkCol;
+
+    @FXML
+    private TableColumn<Registration, String> kondiCol;
+
+    @FXML
+    private TableColumn<Registration, String> teremCol;
+
+    @FXML
+    private TableColumn<Registration, String> idopCol;
+
+    @FXML
+    private TableColumn<Registration, String> napCol;
+
+    @FXML
+    private TableColumn<Registration, Integer> letszamCol;
+    
+    ObservableList<Registration> oblist = FXCollections.observableArrayList();
     
     String edzo;
     String ido;
     String foglalk;
-    
-    List<String> list = new ArrayList();
-    
-    private StringBuilder sb;
-    
-    //tabPane.autosize();
 
     @FXML
     void keres(ActionEvent event) 
     {    
         //List<String> list = new ArrayList();
-        sb  = new StringBuilder("");
         edzo = edzoKeresText.getText().length() != 0 ? " NÉV = '" + edzoKeresText.getText() + "'" : " NÉV IS NOT NULL";
         ido = idopKeresText.getText().length() != 0 ? " AND IDOPONT = '" + idopKeresText.getText() + "'" : " AND IDOPONT IS NOT NULL";
         foglalk = foglalkKeresText.getText().length() != 0 ? " AND FOGLALKOZAS = '" + foglalkKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
@@ -87,21 +110,13 @@ public class FXMLScene
                 String keres = "select * from REGISTRATION where " + edzo + ido + foglalk;
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(keres);
-                //ObservableList<String> row = FXCollections.observableArrayList();
-                //row.add(rs.getString("NÉV"))
                 
                 while(rs.next())
-                {                
-                    sb.append("Edző: " + rs.getString("NÉV")+ "\t\t");
-                    sb.append("Foglalkozás: " + rs.getString("FOGLALKOZAS")+ "\t\t");
-                    sb.append("Konditerem: " + rs.getString("Konditerem") + "\t\t");
-                    sb.append("Max létszám: " + rs.getString("HANYFO") + "\t\t" );
-                    sb.append("Terem/szoba : " + rs.getString("HELYSZIN") + "\t\t");;
-                    sb.append("Időpont: " + rs.getString("IDOPONT") + "\t\t");
-                    sb.append("Foglalkozás napja: " + rs.getString("FOGLALKOZASNAPJA") + "\n\n");
+                {                                   
+                    oblist.add(new Registration(rs.getString("NÉV"), rs.getString("KONDITEREM"), rs.getString("HELYSZIN"), rs.getString("FOGLALKOZAS"), rs.getString("FOGLALKOZASNAPJA"), rs.getString("IDOPONT"), rs.getInt("HANYFO")));
                 } 
 
-                if(sb.length() == 0)
+                if(oblist.isEmpty())
                 {
                     Alert alert = new Alert(AlertType.INFORMATION);
                     alert.setTitle("Keresés Hiba");
@@ -112,20 +127,28 @@ public class FXMLScene
                 }
                 else
                 {
-                    talalatText.setText(sb.toString());
+                    edzoCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    foglalkCol.setCellValueFactory(new PropertyValueFactory<>("exercise"));
+                    kondiCol.setCellValueFactory(new PropertyValueFactory<>("gym"));
+                    teremCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+                    idopCol.setCellValueFactory(new PropertyValueFactory<>("time"));
+                    napCol.setCellValueFactory(new PropertyValueFactory<>("dateOfExercise"));
+                    letszamCol.setCellValueFactory(new PropertyValueFactory<>("amountOfPeople"));
+            
+                    tableView.setItems(oblist);
                 }
             }
             catch (SQLException | ClassNotFoundException ex)
             {
                   System.out.println(ex.getMessage());
-            }
+            }            
         }
     }    
 
     @FXML
     void ujra(ActionEvent event) 
     {
-        talalatText.clear();
+        tableView.getItems().clear();
         edzoKeresText.clear();
         idopKeresText.clear();
         foglalkKeresText.clear();

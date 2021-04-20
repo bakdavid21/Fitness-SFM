@@ -25,6 +25,21 @@ public class Registration implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    public Registration(String name, String gym, String location, String exercise, String dateOfExercise, String time, int amountOfPeople) 
+    {
+        this.name = name;
+        this.gym = gym;
+        this.location = location;
+        this.exercise = exercise;
+        this.dateOfExercise = dateOfExercise;
+        this.time = time;
+        this.amountOfPeople = amountOfPeople;
+    }
+
+    public Registration() 
+    {
+    }
+
     public long getId() {
         return id;
     }
