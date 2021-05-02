@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.KepernyoFelhasznalo">
+   <children>
+      <Label layoutX="199.0" layoutY="80.0" style="-fx-font-weight: bold;" text="Felhasználói platform">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="147.0" layoutY="184.0" mnemonicParsing="false" onAction="#TerembeosztasokMegtekintese" text="Terembeosztások megtekintése">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="147.0" layoutY="250.0" mnemonicParsing="false" onAction="#FoglalkozasKeresese" prefHeight="44.0" prefWidth="307.0" text="Foglalkozás keresése">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#Velemenyek" prefHeight="44.0" prefWidth="307.0" text="Vélemények">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="147.0" layoutY="379.0" mnemonicParsing="false" onAction="#EdzőkMegtekintése" prefHeight="44.0" prefWidth="307.0" text="Edzők megtekintése">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Vissza" text="Vissza" />
+   </children>
+</AnchorPane>
