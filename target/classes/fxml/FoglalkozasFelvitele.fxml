@@ -107,7 +107,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Vissza" prefHeight="38.0" prefWidth="115.0" text="Vissza">
+      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonAction" prefHeight="38.0" prefWidth="115.0" text="Vissza">
          <font>
             <Font size="17.0" />
          </font>

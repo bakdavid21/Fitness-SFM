@@ -4,6 +4,7 @@ hu\unideb\inf\controller\Terembeosztas.class
 hu\unideb\inf\controller\Kereses.class
 hu\unideb\inf\controller\Velemenyiras.class
 hu\unideb\inf\controller\FoglalkozasFelvitele.class
+hu\unideb\inf\model\EdzoiProfil.class
 hu\unideb\inf\MainApp.class
 hu\unideb\inf\controller\KepernyoEdzo.class
 hu\unideb\inf\controller\EdzoiProfilMegtekintese.class

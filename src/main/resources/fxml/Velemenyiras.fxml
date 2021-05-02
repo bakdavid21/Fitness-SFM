@@ -50,7 +50,7 @@
          </font>
       </Label>
       <TextArea fx:id="velemenyVelemenyiras" layoutX="-1.0" layoutY="300.0" prefHeight="200.0" prefWidth="752.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0" />
-      <Button layoutX="332.0" layoutY="456.0" mnemonicParsing="false" onAction="#mentesVelemenyiras" prefHeight="32.0" prefWidth="136.0" text="Küldés">
+      <Button fx:id="mentesVelemenyiras" layoutX="332.0" layoutY="456.0" mnemonicParsing="false" onAction="#mentesVelemenyirasAction" prefHeight="32.0" prefWidth="136.0" text="Küldés">
          <font>
             <Font size="16.0" />
          </font>

@@ -12,26 +12,26 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="147.0" layoutY="184.0" mnemonicParsing="false" onAction="#TerembeosztasokMegtekintese" text="Terembeosztások megtekintése">
+      <Button fx:id="TerembeosztasokMegtekinteseButton" layoutX="147.0" layoutY="184.0" mnemonicParsing="false" onAction="#TerembeosztasokMegtekinteseButtonAction" text="Terembeosztások megtekintése">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="147.0" layoutY="250.0" mnemonicParsing="false" onAction="#FoglalkozasKeresese" prefHeight="44.0" prefWidth="307.0" text="Foglalkozás keresése">
+      <Button fx:id="FoglalkozasKereseseButton" layoutX="147.0" layoutY="250.0" mnemonicParsing="false" onAction="#FoglalkozasKereseseButtonAction" prefHeight="44.0" prefWidth="307.0" text="Foglalkozás keresése">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#Velemenyek" prefHeight="44.0" prefWidth="307.0" text="Vélemények">
+      <Button fx:id="VelemenyekButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#VelemenyekButtonAction" prefHeight="44.0" prefWidth="307.0" text="Vélemények">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="147.0" layoutY="379.0" mnemonicParsing="false" onAction="#EdzőkMegtekintése" prefHeight="44.0" prefWidth="307.0" text="Edzők megtekintése">
+      <Button fx:id="EdzokMegtekinteseButton" layoutX="147.0" layoutY="379.0" mnemonicParsing="false" onAction="#EdzokMegtekinteseButtonAction" prefHeight="44.0" prefWidth="307.0" text="Edzők megtekintése">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Vissza" text="Vissza" />
+      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonAction" text="Vissza" />
    </children>
 </AnchorPane>
