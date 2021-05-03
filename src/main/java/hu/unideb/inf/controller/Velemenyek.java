@@ -41,14 +41,25 @@ public class Velemenyek {
     private TableColumn<?, ?> Velemeny;
 
     @FXML
-    void VelemenyIrasa(ActionEvent event) {
-
+    void VelemenyIrasa(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Velemenyiras.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(loader.load());
+        stage.setTitle("Foglalkozások keresése");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void Vissza(ActionEvent event) throws IOException {
+    private Button VisszaButton;
+    
+    
+    @FXML
+    void VisszaButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoFelhasznalo.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);

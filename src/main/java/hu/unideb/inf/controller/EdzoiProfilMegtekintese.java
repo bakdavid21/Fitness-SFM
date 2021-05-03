@@ -49,11 +49,16 @@ public class EdzoiProfilMegtekintese {
 
     @FXML
     private TableColumn<?, ?> Velemeny;
+    
+    @FXML
+    private Button VisszaButton;
 
     @FXML
-    void Vissza(ActionEvent event) throws IOException {
+    void VisszaButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoFelhasznalo.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);

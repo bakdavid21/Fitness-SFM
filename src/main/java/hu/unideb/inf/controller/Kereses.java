@@ -165,10 +165,15 @@ public class Kereses
         return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
     }
     
-     @FXML
-    void Vissza(ActionEvent event) throws IOException {
+    @FXML
+    private Button VisszaButton;
+    
+    @FXML
+    void VisszaButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoFelhasznalo.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);

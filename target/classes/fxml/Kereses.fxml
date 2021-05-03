@@ -56,6 +56,6 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Vissza" text="Vissza" />
+      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonAction" text="Vissza" />
    </children>
 </AnchorPane>

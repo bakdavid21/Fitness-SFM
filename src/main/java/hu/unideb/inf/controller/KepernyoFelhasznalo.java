@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -18,30 +19,43 @@ import javafx.stage.Stage;
  * @author Peti
  */
 public class KepernyoFelhasznalo {
+    
+    @FXML
+    private Button EdzokMegtekinteseButton;
 
     @FXML
-    void EdzőkMegtekintése(ActionEvent event) throws IOException {
+    void EdzokMegtekinteseButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/EdzoiProfilMegtekintese.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) EdzokMegtekinteseButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Edzői profilok megtekintése");
         stage.setScene(scene);
         stage.show();
     }
+    
+    @FXML
+    private Button FoglalkozasKereseseButton;
 
     @FXML
-    void FoglalkozasKeresese(ActionEvent event) throws IOException {
+    void FoglalkozasKereseseButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Kereses.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) FoglalkozasKereseseButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();
     }
+    
+    @FXML
+    private Button TerembeosztasokMegtekinteseButton;
 
     @FXML
-    void TerembeosztasokMegtekintese(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Terembeosztasok.fxml"));
+    void TerembeosztasokMegtekinteseButtonAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Terembeosztások.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Terembeosztások megtekintése");
@@ -49,22 +63,31 @@ public class KepernyoFelhasznalo {
         stage.show();
 
     }
+    @FXML
+    private Button VelemenyekButton;
 
     @FXML
-    void Velemenyek(ActionEvent event) throws IOException {
+    void VelemenyekButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Velemenyek.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) VelemenyekButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Vélemények megjelenitése");
+        stage.setTitle("Vélemények megtekintése");
         stage.setScene(scene);
         stage.show();
 
     }
+    
+    @FXML
+    private Button VisszaButton;
 
     @FXML
-    void Vissza(ActionEvent event) throws IOException {
+    void VisszaButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Kezdokepernyo.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Fitness Terem alkalmazás");
         stage.setScene(scene);

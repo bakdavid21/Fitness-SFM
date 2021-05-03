@@ -16,8 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="hu.unideb.inf.controller.EdzoiProfilMegtekintese">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.EdzoiProfilMegtekintese">
    <children>
       <GridPane layoutX="24.0" layoutY="14.0" prefHeight="30.0" prefWidth="657.0" AnchorPane.bottomAnchor="730.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="35.0">
         <columnConstraints>
@@ -115,7 +114,7 @@
             <TableColumn fx:id="Velemeny" prefWidth="691.0" text="Vélemény" />
         </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#Vissza" text="Vissza">
+      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#VisszaButtonAction" text="Vissza">
          <font>
             <Font size="15.0" />
          </font>

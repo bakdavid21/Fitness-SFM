@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -141,12 +142,17 @@ public class FoglalkozasFelvitele {
     
             }
     }
-            
+           
     @FXML
-    void Vissza(ActionEvent event) throws IOException {
+    private Button VisszaButton;
+    
+    @FXML
+    void VisszaButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoEdzo.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
+        Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
+        stage2.close();
         stage.setTitle("Edzői Profil");
         stage.setScene(scene);
         stage.show();
