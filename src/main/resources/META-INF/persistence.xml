@@ -4,6 +4,7 @@
     <description>Hibernate EntityManager Demo</description>
     <class>hu.unideb.inf.model.Foglalkozasok</class>
     <class>hu.unideb.inf.model.EdzoiProfil</class>
+    <class>hu.unideb.inf.model.VelemenyirasModel</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
