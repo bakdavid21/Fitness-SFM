@@ -24,7 +24,7 @@ public class VelemenyirasModel implements Serializable
 {
     @Column(name = "id", nullable = false, unique = true )
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
     @Column (name = "becenev",  nullable = false, unique = false)
@@ -41,8 +41,21 @@ public class VelemenyirasModel implements Serializable
     
     @Column (name = "velemeny",  nullable = false, unique = false)
     private String velemeny;
-    
-    
+
+    public VelemenyirasModel(String becenev, String edzonev, String foglalkozas, double ertekeles, String velemeny) 
+    {
+        this.becenev = becenev;
+        this.edzonev = edzonev;
+        this.foglalkozas = foglalkozas;
+        this.ertekeles = ertekeles;
+        this.velemeny = velemeny;
+    }
+
+    public VelemenyirasModel() 
+    {
+        
+    }
+
     public long getId() 
     {
         return id;
