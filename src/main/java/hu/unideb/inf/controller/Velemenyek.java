@@ -14,6 +14,7 @@ import hu.unideb.inf.model.Foglalkozasok;
 import hu.unideb.inf.model.VelemenyirasModel;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,28 +55,32 @@ public class Velemenyek {
     ObservableList<VelemenyirasModel> oblist = FXCollections.observableArrayList();
 
     String keres = "select * from VELEMENYEK";
+    
 
     @FXML 
     private void initialize() throws SQLException, ClassNotFoundException 
-    {
+    {        
         Connection con = getConnection();
+        DatabaseMetaData dbm = con.getMetaData();
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery(keres);
+        //ResultSet rs = st.executeQuery(keres);
+        ResultSet rs = dbm.getTables(null, null, "VELEMENYEK", null);
+        if(rs.next())
+        {
+            rs = st.executeQuery(keres);
+            while(rs.next())
+            {                                   
+                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES"), rs.getString("VELEMENY")));
+            } 
         
-        DecimalFormat df = new DecimalFormat("#.##");
-        
-        while(rs.next())
-        {                                   
-            oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES"), rs.getString("VELEMENY")));
-        } 
-        
-        VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
-        EdzoNeve.setCellValueFactory(new PropertyValueFactory<> ("edzonev"));
-        Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
-        Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));
-        Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 
-        
-        Velemenyek.setItems(oblist);
+            VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
+            EdzoNeve.setCellValueFactory(new PropertyValueFactory<> ("edzonev"));
+            Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
+            Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));
+            Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 
+
+            Velemenyek.setItems(oblist);
+        }
     }
     
     @FXML
