@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.Velemenyiras">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.Velemenyiras">
    <children>
       <GridPane layoutX="152.0" layoutY="10.0" prefHeight="120.0" prefWidth="448.0" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="20.0">
         <columnConstraints>
@@ -55,6 +55,6 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Rating fx:id="rating" layoutX="312.0" layoutY="163.0" />
+      <Rating fx:id="rating" layoutX="312.0" layoutY="163.0" partialRating="true" rating="3.0" />
    </children>
 </AnchorPane>

@@ -28,7 +28,7 @@ public class Velemenyiras {
     private TextArea velemenyVelemenyiras;
 
     @FXML
-    private Rating edzorating;
+    private Rating rating;
 
     
     @FXML
@@ -51,14 +51,14 @@ public class Velemenyiras {
         velemeny.setBeceNev(becenevVelemenyiras.getText());
         velemeny.setEdzoNev(edzonevVelemenyiras.getText());
         velemeny.setFoglalkozas(foglalkozasnevVelemenyiras.getText());
-        //velemeny.setErtekeles(edzorating.getRating());
+        velemeny.setErtekeles(rating.getRating());
         velemeny.setVelemeny(velemenyVelemenyiras.getText());
         entityManager.getTransaction().begin();
         entityManager.persist(velemeny);
         entityManager.getTransaction().commit(); 
 
         
-        System.out.println(edzorating.getRating());
+        System.out.println(rating.getRating());
     }
 
 }

@@ -36,10 +36,8 @@ public class VelemenyirasModel implements Serializable
     @Column (name = "foglalkozas",  nullable = false, unique = false)
     private String foglalkozas;
     
-    /*
     @Column (name = "ertekeles",  nullable = false, unique = false)
     private double ertekeles;
-    */
     
     @Column (name = "velemeny",  nullable = false, unique = false)
     private String velemeny;
@@ -84,8 +82,6 @@ public class VelemenyirasModel implements Serializable
     {
         this.foglalkozas = foglalkozas;
     }
-    
-    /*
 
     public double getErtekeles()
     {
@@ -96,8 +92,6 @@ public class VelemenyirasModel implements Serializable
     {
         this.ertekeles = ertekeles;
     }
-    
-    */
 
     public String getVelemeny() 
     {
