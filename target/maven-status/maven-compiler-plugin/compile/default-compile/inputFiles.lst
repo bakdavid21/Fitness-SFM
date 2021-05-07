@@ -1,13 +1,14 @@
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\KepernyoEdzo.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Terembeosztas.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\EdzoiProfilMegtekintese.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\model\Foglalkozasok.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Velemenyek.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\MainApp.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Kereses.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\KepernyoFelhasznalo.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\EdzoiProfilLetrehozasa.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Kezdokepernyo.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Velemenyiras.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\FoglalkozasFelvitele.java
-C:\Users\Peti\Desktop\Fitness-SFM-újgraffelület\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\model\EdzoiProfil.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\model\Foglalkozasok.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kereses.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\MainApp.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\KepernyoFelhasznalo.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Terembeosztas.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\KepernyoEdzo.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\model\EdzoiProfil.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Velemenyiras.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\EdzoiProfilLetrehozasa.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\FoglalkozasFelvitele.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\EdzoiProfilMegtekintese.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\model\VelemenyirasModel.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kezdokepernyo.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Velemenyek.java

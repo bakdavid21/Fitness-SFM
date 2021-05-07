@@ -1,13 +1,26 @@
 package hu.unideb.inf.controller;
 
 import hu.unideb.inf.MainApp;
+import hu.unideb.inf.model.EdzoiProfil;
+import hu.unideb.inf.model.Foglalkozasok;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -18,22 +31,22 @@ import org.controlsfx.control.Rating;
 public class EdzoiProfilMegtekintese {
 
     @FXML
-    private ChoiceBox<String> ChoiceBox;
+    private ChoiceBox<EdzoiProfil> ChoiceBox;
 
     @FXML
-    private TextField EdzoNev;
+    private Label edzoNevLabel;
 
     @FXML
-    private TextField SzuletesiDatum;
+    private Label szuletesiDatumLabel;
 
     @FXML
-    private TextArea Tapasztalatok;
+    private Label vegzettsegEsTapasztalatokLabel;
 
     @FXML
-    private TextArea Foglalkozasok;
+    private Label FoglalkozasokLabel;
 
     @FXML
-    private TextArea Bemutatkozas;
+    private Label bemutatkozasLabel;
 
     @FXML
     private Rating FelhasznaloiPontozas;
@@ -51,7 +64,39 @@ public class EdzoiProfilMegtekintese {
     private TableColumn<?, ?> Velemeny;
     
     @FXML
+    private Label label;
+    
+    @FXML
     private Button VisszaButton;
+    
+    ObservableList<EdzoiProfil> oblist = FXCollections.observableArrayList();
+   
+    
+    
+    private void initialize() throws ClassNotFoundException, SQLException {
+        System.out.println("SEMMI");
+        Connection con = getConnection();
+        String keres = "select * from EdzoiProfil";
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(keres);
+        while(rs.next())
+        {                                   
+           oblist.add(new EdzoiProfil(rs.getString("NÉV")));
+        } 
+        ChoiceBox.setItems(oblist);
+    }
+    
+    
+    @FXML
+    void comboBoxAction(ActionEvent event) throws ClassNotFoundException, SQLException {
+
+    }
+    
+    private Connection getConnection() throws ClassNotFoundException, SQLException 
+    {
+        Class.forName("org.h2.Driver");
+        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
+    }
 
     @FXML
     void VisszaButtonAction(ActionEvent event) throws IOException {
@@ -66,8 +111,8 @@ public class EdzoiProfilMegtekintese {
     }
 
     @FXML
-    void ProfilMegtekintes(ActionEvent event) {
-
+    void ProfilMegtekintes(ActionEvent event) throws ClassNotFoundException, SQLException {
+        
     }
 
 }
