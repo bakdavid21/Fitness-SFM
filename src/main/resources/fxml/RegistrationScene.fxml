@@ -13,7 +13,7 @@
 
 <!--Alap verzió-->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1008.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="hu.unideb.inf.controller.FXMLController" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1008.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane prefHeight="563.0" prefWidth="831.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.topAnchor="0.0" />
       <GridPane layoutX="101.0" layoutY="29.0" prefHeight="494.0" prefWidth="530.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="29.0">
@@ -36,7 +36,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <Label text="Konditerem : " GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Label text="Konditeremerem : " GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <font>
                   <Font size="26.0" />
                </font>
@@ -56,27 +56,27 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="edzonev" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <TextField GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <GridPane.margin>
                   <Insets left="50.0" right="50.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="konditeremnev" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="50.0" right="50.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="helyszin" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="50.0" right="50.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="foglalkozas" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="50.0" right="50.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="foglalkozasnapja" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="50.0" right="50.0" />
                </GridPane.margin>
@@ -91,19 +91,19 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="idopont" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="50.0" right="50.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="hanyfo" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets left="50.0" right="50.0" />
                </GridPane.margin>
             </TextField>
          </children>
       </GridPane>
-      <Button layoutX="457.0" layoutY="788.0" mnemonicParsing="false" onAction="#mentes" text="Mentés">
+      <Button layoutX="457.0" layoutY="788.0" mnemonicParsing="false" text="Mentés">
          <font>
             <Font size="20.0" />
          </font>
