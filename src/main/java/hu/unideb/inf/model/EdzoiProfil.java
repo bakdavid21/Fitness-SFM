@@ -39,6 +39,11 @@ public class EdzoiProfil implements Serializable {
         this.bemutatkozas = bemutatkozas;
     }
 
+    public EdzoiProfil(String nev) 
+    {
+        this.nev = nev;
+    }    
+    
     public EdzoiProfil() 
     {
     }

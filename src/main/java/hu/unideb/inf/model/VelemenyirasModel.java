@@ -27,7 +27,7 @@ public class VelemenyirasModel implements Serializable
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
-    @Column (name = "becenev",  nullable = false, unique = false)
+    @Column (name = "becenev", nullable = false, unique = false)
     private String becenev;
     
     @Column (name = "edzonev",  nullable = false, unique = false)

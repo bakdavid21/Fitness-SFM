@@ -47,7 +47,7 @@ public class Velemenyek {
     private TableColumn<VelemenyirasModel, String> Foglalkozas;
 
     @FXML
-    private TableColumn<VelemenyirasModel, Integer> Ertekeles;
+    private TableColumn<VelemenyirasModel, Double> Ertekeles;
 
     @FXML
     private TableColumn<VelemenyirasModel, String> Velemeny;
@@ -70,7 +70,7 @@ public class Velemenyek {
             rs = st.executeQuery(keres);
             while(rs.next())
             {                                   
-                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES"), rs.getString("VELEMENY")));
+                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES") , rs.getString("VELEMENY")));
             } 
         
             VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
