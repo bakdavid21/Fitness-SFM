@@ -7,6 +7,8 @@ package hu.unideb.inf.controller;
 
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.EdzoiProfil;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +20,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.swing.JFileChooser;
         
 /**
  *
@@ -58,10 +65,30 @@ public class EdzoiProfilLetrehozasa {
 
     @FXML
     private ImageView image;
+    
+    String file;
 
     @FXML
-    void FenykepFeltoltese(ActionEvent event) {
+    void FenykepFeltoltese(ActionEvent event) 
+    {
+        FileChooser fc = new FileChooser();
+        
+        FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
+        FileChooser.ExtensionFilter extFilterjpg = new FileChooser.ExtensionFilter("jpg files (*.jpg)", "*.jpg");
+        FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.PNG)", "*.PNG");
+        FileChooser.ExtensionFilter extFilterpng = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
+        fc.getExtensionFilters().addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
 
+        File selectedFile = fc.showOpenDialog(null);
+        
+        file = "file:///" + selectedFile.toString();
+        file = file.replace("\\","/");
+        
+        System.out.println(selectedFile);
+        System.out.println(file);
+        
+        image.setImage(new Image(file));
+        
     }
 
     @FXML

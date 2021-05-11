@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="mockito_test.FoglalkozasokTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="mockito_test.FoglalkozasokTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="16+36-2231"/>
@@ -28,7 +28,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-12.0\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-12.0\netbeans\java\maven\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1250"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\MATLAB\R2021a\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\PHP8;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Users\varad\AppData\Local\Microsoft\WindowsApps;C:\Users\varad\AppData\Local\GitHubDesktop\bin;C:\Users\varad\AppData\Roaming\Composer\vendor\bin;C:\Users\varad\.dotnet\tools;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\MATLAB\R2021a\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\PHP8;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Users\varad\AppData\Local\Microsoft\WindowsApps;C:\Users\varad\AppData\Local\GitHubDesktop\bin;C:\Users\varad\AppData\Roaming\Composer\vendor\bin;C:\Users\varad\.dotnet\tools;C:\Gradle\gradle-7.0.1\bin;;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-12.0\netbeans\java\maven\bin\../conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="60.0"/>
@@ -60,6 +60,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="mockito_test.FoglalkozasokTest" name="mockito_test.FoglalkozasokTest.test001_Foglalkozasok" time="0.003"/>
+  <testcase classname="mockito_test.FoglalkozasokTest" name="mockito_test.FoglalkozasokTest.test001_Foglalkozasok" time="0.004"/>
   <testcase classname="mockito_test.FoglalkozasokTest" name="mockito_test.FoglalkozasokTest.test002_FOglalkozasok" time="0"/>
 </testsuite>
