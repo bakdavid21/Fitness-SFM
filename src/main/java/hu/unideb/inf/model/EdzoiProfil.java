@@ -80,6 +80,7 @@ public class EdzoiProfil implements Serializable {
     
     @Column (name = "bemutatkozas", nullable = false, unique = false)
     private String bemutatkozas;
+    
 
     
     public String getSzuletesiDatum() {

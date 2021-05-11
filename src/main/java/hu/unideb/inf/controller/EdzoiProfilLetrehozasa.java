@@ -7,10 +7,18 @@ package hu.unideb.inf.controller;
 
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.EdzoiProfil;
-import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.InputStream;
+import static java.lang.System.in;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,14 +30,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javax.imageio.ImageIO;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.swing.JFileChooser;
         
 /**
  *
@@ -67,6 +72,8 @@ public class EdzoiProfilLetrehozasa {
     private ImageView image;
     
     String file;
+    
+    File selectedFile;
 
     @FXML
     void FenykepFeltoltese(ActionEvent event) 
@@ -79,7 +86,7 @@ public class EdzoiProfilLetrehozasa {
         FileChooser.ExtensionFilter extFilterpng = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
         fc.getExtensionFilters().addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
 
-        File selectedFile = fc.showOpenDialog(null);
+        selectedFile = fc.showOpenDialog(null);
         
         file = "file:///" + selectedFile.toString();
         file = file.replace("\\","/");
@@ -106,8 +113,10 @@ public class EdzoiProfilLetrehozasa {
         stage.show();
     }
     
+    PreparedStatement preparedStatement;
+    
     @FXML
-    void mentesButtonAction(ActionEvent event) {
+    void mentesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
         final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
         EdzoiProfil edzo = new EdzoiProfil();
@@ -118,9 +127,50 @@ public class EdzoiProfilLetrehozasa {
         edzo.setTapasztalatok(tapasztalat);
         edzo.setSzuletesiDatum(SzuletesiDatum.getValue().toString());
         edzo.setBemutatkozas(Bemutatkozas.getText());
+        
+        if(file.length() != 0)
+        {
+            Connection conn = null;
+            PreparedStatement preparedStatement = null;
+ 
+            String createTableQuery = "create table if not exists IMAGESTORE("
+                    + "NAME VARCHAR(255) NOT NULL, "
+                    + "IMAGE BLOB NOT NULL, "
+                    + "PRIMARY KEY (NAME) )";
+ 
+            String storeImageQuery ="insert into IMAGESTORE "
+                                            + "values (?,?)";
+            
+            conn = getConnection();
+            
+            preparedStatement = conn.prepareStatement(createTableQuery);
+ 
+            preparedStatement.execute();
+            
+            preparedStatement = conn.prepareStatement(storeImageQuery);
+ 
+            FileInputStream fileInputStream = new FileInputStream(selectedFile);
+            preparedStatement.setString(1,Nev.getText());
+            
+            preparedStatement.setBinaryStream(2, fileInputStream,fileInputStream.available());
+            
+            preparedStatement.executeUpdate();
+            
+            preparedStatement.close();
+            
+            conn.close();
+ 
+        }
+        
         entityManager.getTransaction().begin();
         entityManager.persist(edzo);
         entityManager.getTransaction().commit(); 
+    }
+    
+    private Connection getConnection() throws ClassNotFoundException, SQLException 
+    {
+        Class.forName("org.h2.Driver");
+        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
     }
 
 }

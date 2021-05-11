@@ -91,6 +91,7 @@ public class Kereses
     @FXML
     void keres(ActionEvent event) 
     {    
+        tableView.getItems().clear();
         //List<String> list = new ArrayList();
         edzo = edzoKeresText.getText().length() != 0 ? " NÉV = '" + edzoKeresText.getText() + "'" : " NÉV IS NOT NULL";
         ido = idopKeresText.getText().length() != 0 ? " AND IDOPONT = '" + idopKeresText.getText() + "'" : " AND IDOPONT IS NOT NULL";
