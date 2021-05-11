@@ -5,11 +5,20 @@
  */
 package hu.unideb.inf.controller;
 
-import java.io.File;
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.EdzoiProfil;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.InputStream;
+import static java.lang.System.in;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -60,34 +69,34 @@ public class EdzoiProfilLetrehozasa {
     private TextArea Bemutatkozas;
 
     @FXML
-    private ImageView imageview;
+    private ImageView image;
     
+    String file;
     
-    @FXML
-    private Button FenykepButton;
-    
-    @FXML
-    void FenykepFeltoltese(ActionEvent event) throws IOException {
-        FileChooser fileChooser = new FileChooser();
-             
-            FileChooser.ExtensionFilter extFilterJPG = 
-                    new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
-            FileChooser.ExtensionFilter extFilterjpg = 
-                    new FileChooser.ExtensionFilter("jpg files (*.jpg)", "*.jpg");
-            FileChooser.ExtensionFilter extFilterPNG = 
-                    new FileChooser.ExtensionFilter("PNG files (*.PNG)", "*.PNG");
-            FileChooser.ExtensionFilter extFilterpng = 
-                    new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
-            fileChooser.getExtensionFilters()
-                    .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
+    File selectedFile;
 
-            File file = fileChooser.showOpenDialog(null);
-            
-            Image image = new Image(file.toURI().toString());
-            imageview.setImage(image);
-            
-        }
-    
+    @FXML
+    void FenykepFeltoltese(ActionEvent event) 
+    {
+        FileChooser fc = new FileChooser();
+        
+        FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
+        FileChooser.ExtensionFilter extFilterjpg = new FileChooser.ExtensionFilter("jpg files (*.jpg)", "*.jpg");
+        FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.PNG)", "*.PNG");
+        FileChooser.ExtensionFilter extFilterpng = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
+        fc.getExtensionFilters().addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
+
+        selectedFile = fc.showOpenDialog(null);
+        
+        file = "file:///" + selectedFile.toString();
+        file = file.replace("\\","/");
+        
+        System.out.println(selectedFile);
+        System.out.println(file);
+        
+        image.setImage(new Image(file));
+        
+    }
 
     @FXML
     private Button VisszaButton;
@@ -99,13 +108,16 @@ public class EdzoiProfilLetrehozasa {
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Edzői Profil");
         stage.setScene(scene);
         stage.show();
     }
     
+    PreparedStatement preparedStatement;
+    
     @FXML
-    void mentesButtonAction(ActionEvent event) {
+    void mentesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
         final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
         EdzoiProfil edzo = new EdzoiProfil();
@@ -116,10 +128,50 @@ public class EdzoiProfilLetrehozasa {
         edzo.setTapasztalatok(tapasztalat);
         edzo.setSzuletesiDatum(SzuletesiDatum.getValue().toString());
         edzo.setBemutatkozas(Bemutatkozas.getText());
-        edzo.setFenykep(imageview.getImage());
+        
+        if(file.length() != 0)
+        {
+            Connection conn = null;
+            PreparedStatement preparedStatement = null;
+ 
+            String createTableQuery = "create table if not exists IMAGESTORE("
+                    + "NAME VARCHAR(255) NOT NULL, "
+                    + "IMAGE BLOB NOT NULL, "
+                    + "PRIMARY KEY (NAME) )";
+ 
+            String storeImageQuery ="insert into IMAGESTORE "
+                                            + "values (?,?)";
+            
+            conn = getConnection();
+            
+            preparedStatement = conn.prepareStatement(createTableQuery);
+ 
+            preparedStatement.execute();
+            
+            preparedStatement = conn.prepareStatement(storeImageQuery);
+ 
+            FileInputStream fileInputStream = new FileInputStream(selectedFile);
+            preparedStatement.setString(1,Nev.getText());
+            
+            preparedStatement.setBinaryStream(2, fileInputStream,fileInputStream.available());
+            
+            preparedStatement.executeUpdate();
+            
+            preparedStatement.close();
+            
+            conn.close();
+ 
+        }
+        
         entityManager.getTransaction().begin();
         entityManager.persist(edzo);
         entityManager.getTransaction().commit(); 
+    }
+    
+    private Connection getConnection() throws ClassNotFoundException, SQLException 
+    {
+        Class.forName("org.h2.Driver");
+        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
     }
 
 }

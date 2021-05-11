@@ -25,10 +25,13 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.controlsfx.control.PropertySheet.Item;
 
 /**
  *
@@ -88,6 +91,7 @@ public class Kereses
     @FXML
     void keres(ActionEvent event) 
     {    
+        tableView.getItems().clear();
         //List<String> list = new ArrayList();
         edzo = edzoKeresText.getText().length() != 0 ? " NÉV = '" + edzoKeresText.getText() + "'" : " NÉV IS NOT NULL";
         ido = idopKeresText.getText().length() != 0 ? " AND IDOPONT = '" + idopKeresText.getText() + "'" : " AND IDOPONT IS NOT NULL";
@@ -107,7 +111,7 @@ public class Kereses
             try
             {
                 Connection con = getConnection();
-                String keres = "select * from REGISTRATION where " + edzo + ido + foglalk;
+                String keres = "select * from FOGLALKOZASOK where " + edzo + ido + foglalk;
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(keres);
                 
@@ -164,15 +168,37 @@ public class Kereses
     private Button VisszaButton;
     
     @FXML
-    void VisszaButtonAction(ActionEvent event) throws IOException {
+    void VisszaButtonAction(ActionEvent event) throws IOException 
+    {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoFelhasznalo.fxml"));
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);
         stage.show();
+    }
+    
+    @FXML
+    void torlesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException 
+    {
+        int pos = tableView.getSelectionModel().getSelectedIndex();
+
+        Foglalkozasok fog = tableView.getItems().get(pos);
+        
+        System.out.println(fog.getTime());
+        
+        Connection con = getConnection();
+        Statement stmt = con.createStatement();
+        String torol = "DELETE FROM FOGLALKOZASOK WHERE NÉV = '" + fog.getName() + "' AND FOGLALKOZAS = '" + fog.getExercise() + "' AND HELYSZIN = '" + fog.getLocation() + "' AND IDOPONT = '" + fog.getTime()+ "' AND FOGLALKOZASNAPJA = '" + fog.getDateOfExercise() + "' AND HANYFO = '" + fog.getAmountOfPeople() + "' AND KONDITEREM = '" + fog.getGym() + "'";
+        int deleteCount = stmt.executeUpdate(torol);
+        
+        fog = tableView.getSelectionModel().getSelectedItem();
+        tableView.getItems().remove(fog);
+        
+        System.out.println(fog);
     }
     
 }

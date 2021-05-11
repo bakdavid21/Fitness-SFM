@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="mockito_test.FoglalkozasokTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="mockito_test.FoglalkozasokTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="15.0.2+7-27"/>
@@ -60,6 +60,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="mockito_test.FoglalkozasokTest" name="mockito_test.FoglalkozasokTest.test002_FOglalkozasok" time="0.002"/>
+  <testcase classname="mockito_test.FoglalkozasokTest" name="mockito_test.FoglalkozasokTest.test002_FOglalkozasok" time="0.003"/>
   <testcase classname="mockito_test.FoglalkozasokTest" name="mockito_test.FoglalkozasokTest.test001_Foglalkozasok" time="0"/>
 </testsuite>

@@ -47,7 +47,7 @@ public class Velemenyek {
     private TableColumn<VelemenyirasModel, String> Foglalkozas;
 
     @FXML
-    private TableColumn<VelemenyirasModel, Integer> Ertekeles;
+    private TableColumn<VelemenyirasModel, Double> Ertekeles;
 
     @FXML
     private TableColumn<VelemenyirasModel, String> Velemeny;
@@ -70,7 +70,7 @@ public class Velemenyek {
             rs = st.executeQuery(keres);
             while(rs.next())
             {                                   
-                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES"), rs.getString("VELEMENY")));
+                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES") , rs.getString("VELEMENY")));
             } 
         
             VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
@@ -88,6 +88,7 @@ public class Velemenyek {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Velemenyiras.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();
@@ -111,6 +112,7 @@ public class Velemenyek {
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.EdzoiProfilMegtekintese">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.KepernyoFelhasznalo">
    <children>
       <GridPane layoutX="24.0" layoutY="14.0" prefHeight="30.0" prefWidth="657.0" AnchorPane.bottomAnchor="730.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="35.0">
         <columnConstraints>

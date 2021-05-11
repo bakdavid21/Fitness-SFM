@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -24,12 +25,16 @@ public class Kezdokepernyo {
     private Button edzoButton;
     
     @FXML
+    private VBox vbox;
+    
+    @FXML
     void edzoButtonAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoEdzo.fxml"));
         Stage stage = new Stage();
         Stage stage2 = (Stage) edzoButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Edzői felület");
         stage.setScene(scene);
         stage.show();
@@ -45,6 +50,7 @@ public class Kezdokepernyo {
         Stage stage2 = (Stage) felhasznaloButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Felhasználói felület");
         stage.setScene(scene);
         stage.show();

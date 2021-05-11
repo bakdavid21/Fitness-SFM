@@ -8,8 +8,6 @@ package hu.unideb.inf.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -32,21 +30,20 @@ public class EdzoiProfil implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    public EdzoiProfil(String nev)
-    {
-        this.nev = nev;
-    }
-    
-    public EdzoiProfil(String nev, String szuletesiDatum, List<String> tapasztalatok, List<String> foglalkozasok, String bemutatkozas, Image fenykep) 
+    public EdzoiProfil(String nev, String szuletesiDatum, List<String> tapasztalatok, List<String> foglalkozasok, String bemutatkozas) 
     {
         this.nev = nev;
         this.szuletesiDatum = szuletesiDatum;
         this.tapasztalatok = tapasztalatok;
         this.foglalkozasok = foglalkozasok;
         this.bemutatkozas = bemutatkozas;
-        this.fenykep = fenykep;
     }
 
+    public EdzoiProfil(String nev) 
+    {
+        this.nev = nev;
+    }    
+    
     public EdzoiProfil() 
     {
     }
@@ -84,16 +81,7 @@ public class EdzoiProfil implements Serializable {
     @Column (name = "bemutatkozas", nullable = false, unique = false)
     private String bemutatkozas;
     
-    @Column (name = "fenykep", nullable = false, unique = false)
-    private Image fenykep;
 
-    public Image getFenykep() {
-        return fenykep;
-    }
-
-    public void setFenykep(Image fenykep) {
-        this.fenykep = fenykep;
-    }
     
     public String getSzuletesiDatum() {
         return szuletesiDatum;

@@ -105,6 +105,7 @@ public class EdzoiProfilMegtekintese {
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);
         stage.show();

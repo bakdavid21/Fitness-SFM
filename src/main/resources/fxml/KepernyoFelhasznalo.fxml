@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.KepernyoFelhasznalo">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #D1FBFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.KepernyoFelhasznalo">
    <children>
-      <Label layoutX="199.0" layoutY="80.0" style="-fx-font-weight: bold;" text="Felhasználói platform">
+      <Label id="#labelcim" alignment="CENTER" contentDisplay="CENTER" layoutX="127.0" layoutY="33.0" style="-fx-font-weight: bold;" styleClass="labelcim" text="Felhasználói platform">
          <font>
             <Font size="20.0" />
          </font>
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </padding>
       </Label>
-      <Button fx:id="TerembeosztasokMegtekinteseButton" layoutX="147.0" layoutY="184.0" mnemonicParsing="false" onAction="#TerembeosztasokMegtekinteseButtonAction" text="Terembeosztások megtekintése">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="FoglalkozasKereseseButton" layoutX="147.0" layoutY="250.0" mnemonicParsing="false" onAction="#FoglalkozasKereseseButtonAction" prefHeight="44.0" prefWidth="307.0" text="Foglalkozás keresése">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="VelemenyekButton" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#VelemenyekButtonAction" prefHeight="44.0" prefWidth="307.0" text="Vélemények">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="EdzokMegtekinteseButton" layoutX="147.0" layoutY="379.0" mnemonicParsing="false" onAction="#EdzokMegtekinteseButtonAction" prefHeight="44.0" prefWidth="307.0" text="Edzők megtekintése">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
       <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonAction" text="Vissza" />
+      <VBox id="felhaszvbox" layoutX="242.0" layoutY="206.0" prefHeight="200.0" prefWidth="100.0" styleClass="vbox" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <Button fx:id="TerembeosztasokMegtekinteseButton" mnemonicParsing="false" onAction="#TerembeosztasokMegtekinteseButtonAction" prefHeight="44.0" prefWidth="307.0" text="Terembeosztások megtekintése">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="FoglalkozasKereseseButton" mnemonicParsing="false" onAction="#FoglalkozasKereseseButtonAction" prefHeight="44.0" prefWidth="307.0" text="Foglalkozás keresése">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="VelemenyekButton" mnemonicParsing="false" onAction="#VelemenyekButtonAction" prefHeight="44.0" prefWidth="307.0" text="Vélemények">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="EdzokMegtekinteseButton" mnemonicParsing="false" onAction="#EdzokMegtekinteseButtonAction" prefHeight="44.0" prefWidth="307.0" text="Edzők megtekintése">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

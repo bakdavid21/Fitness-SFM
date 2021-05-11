@@ -85,6 +85,11 @@ public class Foglalkozasok implements Serializable {
         this.gym = gym;
     }
 
+    @Override
+    public String toString() {
+        return "Foglalkozasok{" + "id=" + id + ", name=" + name + ", gym=" + gym + ", location=" + location + ", exercise=" + exercise + ", dateOfExercise=" + dateOfExercise + ", time=" + time + ", amountOfPeople=" + amountOfPeople + '}';
+    }
+
     public String getLocation() {
         return location;
     }

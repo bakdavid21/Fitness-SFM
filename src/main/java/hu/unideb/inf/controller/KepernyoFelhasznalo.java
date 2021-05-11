@@ -30,6 +30,7 @@ public class KepernyoFelhasznalo {
         Stage stage2 = (Stage) EdzokMegtekinteseButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Edzői profilok megtekintése");
         stage.setScene(scene);
         stage.show();
@@ -45,6 +46,7 @@ public class KepernyoFelhasznalo {
         Stage stage2 = (Stage) FoglalkozasKereseseButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();
@@ -58,6 +60,7 @@ public class KepernyoFelhasznalo {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Terembeosztások.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Terembeosztások megtekintése");
         stage.setScene(scene);
         stage.show();
@@ -73,6 +76,7 @@ public class KepernyoFelhasznalo {
         Stage stage2 = (Stage) VelemenyekButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Vélemények megtekintése");
         stage.setScene(scene);
         stage.show();
@@ -89,6 +93,7 @@ public class KepernyoFelhasznalo {
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Fitness Terem alkalmazás");
         stage.setScene(scene);
         stage.show();

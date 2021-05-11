@@ -151,6 +151,7 @@ public class FoglalkozasFelvitele {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoEdzo.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         stage.setTitle("Edzői Profil");
