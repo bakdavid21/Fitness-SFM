@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.KepernyoEdzo">
+   <children>
+      <Label layoutX="231.0" layoutY="87.0" style="-fx-font-weight: bold;" text="Edzői platform">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="FoglalkozasFelviteleButton" layoutX="183.0" layoutY="228.0" mnemonicParsing="false" onAction="#FoglalkozasFelviteleButtonAction" prefHeight="44.0" prefWidth="234.0" text="Foglalkozás felvitele">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="EdzoiProfilLetrehozasaButton" layoutX="183.0" layoutY="310.0" mnemonicParsing="false" onAction="#EdzoiProfilLetrehozasaButtonAction" text="Edzői profil létrehozása">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonAction" text="Vissza" />
+   </children>
+</AnchorPane>

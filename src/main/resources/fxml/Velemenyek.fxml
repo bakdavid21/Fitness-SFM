@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.Velemenyek">
+   <children>
+      <TableView fx:id="Velemenyek" layoutX="11.0" layoutY="108.0" prefHeight="482.0" prefWidth="880.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="108.0">
+        <columns>
+          <TableColumn fx:id="VelemenyezoNeve" prefWidth="155.0" text="Véleményező neve" />
+          <TableColumn fx:id="EdzoNeve" prefWidth="163.0" text="Edző neve" />
+            <TableColumn fx:id="Foglalkozas" prefWidth="113.0" text="Foglalkozás" />
+            <TableColumn fx:id="Ertekeles" editable="false" prefWidth="82.0" text="Értékelés" />
+            <TableColumn fx:id="Velemeny" prefWidth="366.0" text="Vélemény" />
+        </columns>
+      </TableView>
+      <Button layoutX="729.0" layoutY="30.0" mnemonicParsing="false" onAction="#VelemenyIrasa" text="Vélemény írása">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="VisszaButton" layoutX="10.0" layoutY="18.0" mnemonicParsing="false" onAction="#VisszaButtonAction" text="Vissza" />
+   </children>
+</AnchorPane>
