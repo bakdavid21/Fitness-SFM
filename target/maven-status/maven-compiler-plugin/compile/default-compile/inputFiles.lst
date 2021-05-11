@@ -1,20 +1,3 @@
-<<<<<<< Updated upstream
 C:\Users\Peti\Desktop\kurvaanyad\src\main\java\hu\unideb\inf\controller\FXMLController.java
 C:\Users\Peti\Desktop\kurvaanyad\src\main\java\hu\unideb\inf\model\Registration.java
 C:\Users\Peti\Desktop\kurvaanyad\src\main\java\hu\unideb\inf\MainApp.java
-=======
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Terembeosztas.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kereses.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\FoglalkozasFelvitele.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\MainApp.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\model\Foglalkozasok.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\model\VelemenyirasModel.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kezdokepernyo.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\EdzoiProfilMegtekintese.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Velemenyek.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Velemenyiras.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\model\EdzoiProfil.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\KepernyoFelhasznalo.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\EdzoiProfilLetrehozasa.java
-C:\Users\mythr\Documents\GitHub\Fitness-SFM\src\main\java\hu\unideb\inf\controller\KepernyoEdzo.java
->>>>>>> Stashed changes
