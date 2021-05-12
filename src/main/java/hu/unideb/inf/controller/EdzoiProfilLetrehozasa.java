@@ -75,9 +75,18 @@ public class EdzoiProfilLetrehozasa {
     
     File selectedFile;
 
+    
     @FXML
-    void FenykepFeltoltese(ActionEvent event) 
+    private void initialize()
     {
+        System.out.println(System.getProperty("user.dir"));
+        file = "/images/noImage.png";
+        image.setImage(new Image(file));
+    }
+    
+    @FXML
+    void FenykepFeltoltese(ActionEvent event) throws FileNotFoundException 
+    {  
         FileChooser fc = new FileChooser();
         
         FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
@@ -88,14 +97,22 @@ public class EdzoiProfilLetrehozasa {
 
         selectedFile = fc.showOpenDialog(null);
         
-        file = "file:///" + selectedFile.toString();
-        file = file.replace("\\","/");
+        if(selectedFile != null)
+        {
+            file = "file:///" + selectedFile.toString();
+            file = file.replace("\\","/");
         
-        System.out.println(selectedFile);
-        System.out.println(file);
+            System.out.println(selectedFile);
+            System.out.println(file);
         
-        image.setImage(new Image(file));
-        
+            image.setImage(new Image(file));
+        }
+        else
+        {
+            //selectedFile = new File("/images/noImage.png");
+            file = "/images/noImage.png";
+            image.setImage(new Image(file));
+        }        
     }
 
     @FXML
@@ -114,6 +131,7 @@ public class EdzoiProfilLetrehozasa {
     }
     
     PreparedStatement preparedStatement;
+    FileInputStream fileInputStream;
     
     @FXML
     void mentesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
@@ -149,7 +167,14 @@ public class EdzoiProfilLetrehozasa {
             
             preparedStatement = conn.prepareStatement(storeImageQuery);
  
-            FileInputStream fileInputStream = new FileInputStream(selectedFile);
+            if(selectedFile != null)
+            {
+                fileInputStream = new FileInputStream(selectedFile);
+            }
+            else
+            {
+                fileInputStream = new FileInputStream("images/noImage.png");
+            }
             preparedStatement.setString(1,Nev.getText());
             
             preparedStatement.setBinaryStream(2, fileInputStream,fileInputStream.available());
