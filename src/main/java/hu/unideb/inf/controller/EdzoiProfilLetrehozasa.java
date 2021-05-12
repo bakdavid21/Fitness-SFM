@@ -11,14 +11,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import static java.lang.System.in;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,7 +76,7 @@ public class EdzoiProfilLetrehozasa {
     private void initialize()
     {
         System.out.println(System.getProperty("user.dir"));
-        file = "/images/noImage.png";
+        file = "images/noImage.png";
         image.setImage(new Image(file));
     }
     
@@ -109,8 +105,8 @@ public class EdzoiProfilLetrehozasa {
         }
         else
         {
-            //selectedFile = new File("/images/noImage.png");
-            file = "/images/noImage.png";
+            selectedFile = new File("images/noImage.png");
+            file = "images/noImage.png";
             image.setImage(new Image(file));
         }        
     }

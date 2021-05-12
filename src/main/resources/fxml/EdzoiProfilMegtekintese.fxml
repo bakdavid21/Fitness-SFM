@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.EdzoiProfilMegtekintese">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.EdzoiProfilMegtekintese">
    <children>
       <GridPane layoutX="24.0" layoutY="14.0" prefHeight="30.0" prefWidth="657.0" AnchorPane.bottomAnchor="730.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="35.0">
         <columnConstraints>
@@ -82,7 +82,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Rating fx:id="FelhasznaloiPontozas" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Rating fx:id="FelhasznaloiPontozas" rating="3.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label fx:id="edzoNevLabel" GridPane.columnIndex="1">
                <font>
                   <Font size="17.0" />
