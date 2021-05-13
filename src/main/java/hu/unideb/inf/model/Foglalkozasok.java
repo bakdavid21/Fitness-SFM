@@ -36,6 +36,22 @@ public class Foglalkozasok implements Serializable {
         this.amountOfPeople = amountOfPeople;
     }
 
+    public Foglalkozasok(String name, String time) {
+        this.name = name;
+        this.time = time;
+    }
+
+    public Foglalkozasok(String name, String gym, String location, String exercise, String dateOfExercise, String time, int amountOfPeople) {
+        this.name = name;
+        this.gym = gym;
+        this.location = location;
+        this.exercise = exercise;
+        this.dateOfExercise = dateOfExercise;
+        this.time = time;
+        this.amountOfPeople = amountOfPeople;
+    }
+    
+
     public Foglalkozasok() 
     {
     }
