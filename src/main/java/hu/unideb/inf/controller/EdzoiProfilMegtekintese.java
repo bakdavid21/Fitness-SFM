@@ -86,8 +86,28 @@ public class EdzoiProfilMegtekintese {
     String nev;
     String edzonev;
     
+    @FXML
     private void initialize() throws ClassNotFoundException, SQLException {
+        FelhasznaloiPontozas.setRating(0);
+        FelhasznaloiPontozas.setDisable(true);
         
+        System.out.println("SEMMI");
+        Connection con = getConnection();
+        String keres = "select NÉV from EdzoiProfil";
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(keres);
+        String[] tomb;
+        int i = 1;
+        while(rs.next())
+        {                                   
+            oblist.add(new EdzoiProfil(rs.getString("NÉV")));
+            tomb = oblist.toString().split(",");
+            String nev = tomb[i].toString().substring(5);
+            System.out.println(tomb[i].toString().substring(5));
+            i+=6;
+            oblist3.add(nev); 
+        }  
+        ChoiceBox.setItems(oblist3);
     }
     
     
@@ -138,9 +158,10 @@ public class EdzoiProfilMegtekintese {
                 edzoNevLabel.setText("");
                 szuletesiDatumLabel.setText("");
                 bemutatkozasLabel.setText("");
-                oblist3.clear();
                 oblist4.clear();
                 oblist2.clear();
+                FelhasznaloiPontozas.setRating(0);
+                
                 
                 Connection con = getConnection();
 
@@ -213,6 +234,7 @@ public class EdzoiProfilMegtekintese {
                     int szo2 = oblist4.toString().indexOf("velemeny")-2;
                     System.out.println(oblist4.toString().substring(szo, szo2));
                     FelhasznaloiPontozas.setRating(Double.parseDouble(oblist4.toString().substring(szo, szo2)));
+                    
                 }
 
             }
@@ -221,28 +243,6 @@ public class EdzoiProfilMegtekintese {
                   System.out.println(ex.getMessage());
             }            
         
+        }
     }
-    }
-    @FXML
-    void ProfilBetöltése(ActionEvent event) throws ClassNotFoundException, SQLException {
-        System.out.println("SEMMI");
-        Connection con = getConnection();
-        String keres = "select NÉV from EdzoiProfil";
-        Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery(keres);
-        String[] tomb;
-        int i = 1;
-        while(rs.next())
-        {                                   
-            oblist.add(new EdzoiProfil(rs.getString("NÉV")));
-            tomb = oblist.toString().split(",");
-            String nev = tomb[i].toString().substring(5);
-            System.out.println(tomb[i].toString().substring(5));
-            i+=6;
-            oblist3.add(nev); 
-        }  
-        ChoiceBox.setItems(oblist3);
-    }
-
-
 }

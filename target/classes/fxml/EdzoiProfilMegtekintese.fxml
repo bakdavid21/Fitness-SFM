@@ -32,12 +32,7 @@
                </font>
             </Label>
             <ChoiceBox fx:id="ChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-            <Button mnemonicParsing="false" onAction="#ProfilBetöltése" text="Profilok betöltése" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#ProfilMegtekintes" prefHeight="44.0" prefWidth="277.0" text="Profil megtekintése" GridPane.columnIndex="3">
+            <Button mnemonicParsing="false" onAction="#ProfilMegtekintes" prefHeight="44.0" prefWidth="277.0" text="Profil megtekintése" GridPane.columnIndex="2">
                <font>
                   <Font size="15.0" />
                </font>
