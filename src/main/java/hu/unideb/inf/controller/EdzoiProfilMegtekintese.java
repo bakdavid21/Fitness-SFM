@@ -79,6 +79,7 @@ public class EdzoiProfilMegtekintese {
         String keres = "select * from EdzoiProfil";
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(keres);
+        
         while(rs.next())
         {                                   
            oblist.add(new EdzoiProfil(rs.getString("NÉV")));
