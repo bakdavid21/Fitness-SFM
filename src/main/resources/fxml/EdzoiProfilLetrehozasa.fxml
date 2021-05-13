@@ -91,7 +91,7 @@
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextArea fx:id="Bemutatkozas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextArea fx:id="Bemutatkozas" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets top="5.0" />
                </GridPane.margin>

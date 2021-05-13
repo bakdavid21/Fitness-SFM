@@ -54,6 +54,13 @@ public class EdzoiProfil implements Serializable {
         this.szuletesiDatum = szuletesiDatum;
         this.bemutatkozas = bemutatkozas;
     }
+
+    public EdzoiProfil(long id, String nev, String szuletesiDatum, String bemutatkozas) {
+        this.id = id;
+        this.nev = nev;
+        this.szuletesiDatum = szuletesiDatum;
+        this.bemutatkozas = bemutatkozas;
+    }
     
 
     

@@ -49,16 +49,28 @@ public class EdzoiProfilMegtekintese {
     private Label szuletesiDatumLabel;
 
     @FXML
-    private Label vegzettsegEsTapasztalatokLabel;
+    private Label vegzettsegEsTapasztalatokLabel1;
 
     @FXML
-    private Label FoglalkozasokLabel;
+    private Label FoglalkozasokLabel1;
 
     @FXML
     private Label bemutatkozasLabel;
 
     @FXML
     private Rating FelhasznaloiPontozas;
+    
+    @FXML
+    private Label vegzettsegEsTapasztalatokLabel2;
+
+    @FXML
+    private Label vegzettsegEsTapasztalatokLabel3;
+
+    @FXML
+    private Label FoglalkozasokLabel2;
+
+    @FXML
+    private Label FoglalkozasokLabel3;
     
     @FXML
     private TableView<VelemenyirasModel> VelemenyekTábla;
@@ -82,6 +94,8 @@ public class EdzoiProfilMegtekintese {
     List<EdzoiProfil> oblist2 = new ArrayList();
     ObservableList<String> oblist3 = FXCollections.observableArrayList();
     ObservableList<VelemenyirasModel> oblist4 = FXCollections.observableArrayList();
+    ObservableList<String> oblist5 = FXCollections.observableArrayList();
+    ObservableList<String> oblist6 = FXCollections.observableArrayList();
    
     String nev;
     String edzonev;
@@ -160,6 +174,8 @@ public class EdzoiProfilMegtekintese {
                 bemutatkozasLabel.setText("");
                 oblist4.clear();
                 oblist2.clear();
+                oblist5.clear();
+                oblist6.clear();
                 FelhasznaloiPontozas.setRating(0);
                 
                 
@@ -170,6 +186,7 @@ public class EdzoiProfilMegtekintese {
                 System.out.println(keres);
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(keres);
+                var id=0;
 
                 while(rs.next())
                 {                                   
@@ -177,6 +194,7 @@ public class EdzoiProfilMegtekintese {
                     System.out.println(rs.getString("NÉV"));
                     System.out.println(oblist2.size());
                     System.out.println(oblist2);
+                    id = rs.getInt("ID");
                 } 
 
                 if(oblist2.isEmpty())
@@ -188,6 +206,8 @@ public class EdzoiProfilMegtekintese {
 
                     alert.showAndWait();
                 }
+                
+                
                 else
                 {
                     var tomb = oblist2.toString().split(",");
@@ -236,6 +256,40 @@ public class EdzoiProfilMegtekintese {
                     FelhasznaloiPontozas.setRating(Double.parseDouble(oblist4.toString().substring(szo, szo2)));
                     
                 }
+                String edzoid = " EDZOIPROFIL_ID = '" + id + "'";
+                String keres3 = "SELECT * FROM EDZOIPROFIL_FOGLALKOZASOK where " + edzoid;
+                System.out.println(keres3);
+                Connection con3 = getConnection();
+                Statement st3 = con3.createStatement();
+                ResultSet rs3 = st3.executeQuery(keres3);
+                
+                while(rs3.next())
+                {                             
+                      oblist5.add(rs3.getString("FOGLALKOZASOK"));
+                      System.out.println(oblist5);
+                } 
+
+                var tomb = oblist5.toString().split(",");
+                FoglalkozasokLabel1.setText(tomb[0].substring(1));
+                FoglalkozasokLabel2.setText(tomb[1]);
+                FoglalkozasokLabel3.setText(tomb[2].substring(0, tomb[2].length()-1));
+                
+                String keres4 = "SELECT * FROM EDZOIPROFIL_TAPASZTALATOK where " + edzoid;
+                System.out.println(keres4);
+                Connection con4 = getConnection();
+                Statement st4 = con4.createStatement();
+                ResultSet rs4 = st4.executeQuery(keres4);
+                while(rs4.next())
+                {                             
+                      oblist6.add(rs4.getString("tapasztalatok"));
+                      System.out.println(oblist6);
+                }
+                var tomb2 = oblist6.toString().split(",");
+                vegzettsegEsTapasztalatokLabel1.setText(tomb2[0].substring(1));
+                vegzettsegEsTapasztalatokLabel2.setText(tomb2[1]);
+                vegzettsegEsTapasztalatokLabel3.setText(tomb2[2].substring(0, tomb2[2].length()-1));
+                
+                
 
             }
             catch (SQLException | ClassNotFoundException ex)

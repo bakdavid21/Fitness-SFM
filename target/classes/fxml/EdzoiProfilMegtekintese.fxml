@@ -94,17 +94,37 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label fx:id="vegzettsegEsTapasztalatokLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Label fx:id="vegzettsegEsTapasztalatokLabel1" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label fx:id="FoglalkozasokLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+            <Label fx:id="FoglalkozasokLabel1" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
             <Label fx:id="bemutatkozasLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="vegzettsegEsTapasztalatokLabel2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="vegzettsegEsTapasztalatokLabel3" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="FoglalkozasokLabel2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="FoglalkozasokLabel3" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="17.0" />
                </font>
