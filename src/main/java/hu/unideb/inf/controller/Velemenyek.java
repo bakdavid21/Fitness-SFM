@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import javafx.beans.property.ReadOnlyDoubleWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -71,7 +72,7 @@ public class Velemenyek {
             rs = st.executeQuery(keres);
             while(rs.next())
             {                                   
-                System.out.println(rs.getString("BECENEV"));
+                DecimalFormat df = new DecimalFormat("#.##");
                 oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES") , rs.getString("VELEMENY")));
             } 
         
@@ -80,7 +81,7 @@ public class Velemenyek {
             VelemenyezoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getBeceNev()));
             EdzoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getEdzoNev()));
             Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
-            Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));
+            Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));            
             Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 
 
             Velemenyek.setItems(oblist);

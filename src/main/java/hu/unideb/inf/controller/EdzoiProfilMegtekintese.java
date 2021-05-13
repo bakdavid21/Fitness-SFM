@@ -30,6 +30,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.controlsfx.control.Rating;
 /**
@@ -43,35 +45,23 @@ public class EdzoiProfilMegtekintese {
     private ChoiceBox<String> ChoiceBox;
 
     @FXML
-    private Label edzoNevLabel;
+    private TextArea edzoNev;
 
     @FXML
-    private Label szuletesiDatumLabel;
+    private TextArea szuletesiDatum;
 
     @FXML
-    private Label vegzettsegEsTapasztalatokLabel1;
+    private TextArea vegzettsegEsTapasztalatok;
 
     @FXML
-    private Label FoglalkozasokLabel1;
+    private TextArea Foglalkozasok;
 
     @FXML
-    private Label bemutatkozasLabel;
+    private TextArea bemutatkozas;
 
     @FXML
     private Rating FelhasznaloiPontozas;
-    
-    @FXML
-    private Label vegzettsegEsTapasztalatokLabel2;
 
-    @FXML
-    private Label vegzettsegEsTapasztalatokLabel3;
-
-    @FXML
-    private Label FoglalkozasokLabel2;
-
-    @FXML
-    private Label FoglalkozasokLabel3;
-    
     @FXML
     private TableView<VelemenyirasModel> VelemenyekTábla;
     
@@ -90,6 +80,9 @@ public class EdzoiProfilMegtekintese {
     @FXML
     private Button VisszaButton;
     
+    @FXML
+    private ImageView image;
+    
     ObservableList<EdzoiProfil> oblist = FXCollections.observableArrayList();
     List<EdzoiProfil> oblist2 = new ArrayList();
     ObservableList<String> oblist3 = FXCollections.observableArrayList();
@@ -99,11 +92,18 @@ public class EdzoiProfilMegtekintese {
    
     String nev;
     String edzonev;
+    String name;
+    String file;
     
     @FXML
     private void initialize() throws ClassNotFoundException, SQLException {
         FelhasznaloiPontozas.setRating(0);
         FelhasznaloiPontozas.setDisable(true);
+        edzoNev.setDisable(true);
+        szuletesiDatum.setDisable(true);
+        Foglalkozasok.setDisable(true);
+        vegzettsegEsTapasztalatok.setDisable(true);
+        bemutatkozas.setDisable(true);
         
         System.out.println("SEMMI");
         Connection con = getConnection();
@@ -155,6 +155,7 @@ public class EdzoiProfilMegtekintese {
         
         nev = ChoiceBox.getValue().toString().length() != 0 ? " NÉV = '" + ChoiceBox.getValue().toString() + "'" : " NÉV IS NOT NULL";
         edzonev = ChoiceBox.getValue().toString().length() != 0 ? " EDZONEV = '" + ChoiceBox.getValue().toString()+ "'" : " EDZONEV IS NOT NULL";
+        name = ChoiceBox.getValue().toString().length() != 0 ? " NAME = '" + ChoiceBox.getValue().toString()+ "'" : " NAME IS NOT NULL";
         
         if(ChoiceBox.getValue().toString().length() == 0 )
         {
@@ -169,9 +170,13 @@ public class EdzoiProfilMegtekintese {
         {
             try
             {
-                edzoNevLabel.setText("");
-                szuletesiDatumLabel.setText("");
-                bemutatkozasLabel.setText("");
+                edzoNev.setText("");
+                szuletesiDatum.setText("");
+                bemutatkozas.setText("");
+                vegzettsegEsTapasztalatok.setText("");
+                Foglalkozasok.setText("");
+                
+                
                 oblist4.clear();
                 oblist2.clear();
                 oblist5.clear();
@@ -215,11 +220,11 @@ public class EdzoiProfilMegtekintese {
                         System.out.println(i);
                     }
                     String nev = tomb[1].toString().substring(5);
-                    edzoNevLabel.setText(nev);
+                    edzoNev.setText(nev);
                     String szuletesidatum = tomb[2].toString().substring(16);
-                    szuletesiDatumLabel.setText(szuletesidatum);
-                    String bemutatkozas = tomb[5].toString().substring(14, tomb[5].length()-2);
-                    bemutatkozasLabel.setText(bemutatkozas);
+                    szuletesiDatum.setText(szuletesidatum);
+                    String bemutatkozas2 = tomb[5].toString().substring(14, tomb[5].length()-2);
+                    bemutatkozas.setText(bemutatkozas2);
                 }
                 
                 String keres2 = "select * from VELEMENYEK where " + edzonev;
@@ -270,9 +275,8 @@ public class EdzoiProfilMegtekintese {
                 } 
 
                 var tomb = oblist5.toString().split(",");
-                FoglalkozasokLabel1.setText(tomb[0].substring(1));
-                FoglalkozasokLabel2.setText(tomb[1]);
-                FoglalkozasokLabel3.setText(tomb[2].substring(0, tomb[2].length()-1));
+                Foglalkozasok.setText(tomb[0].substring(1) + "\n" + tomb[1].substring(1) + "\n" + tomb[2].substring(1, tomb[2].length()-1));
+                
                 
                 String keres4 = "SELECT * FROM EDZOIPROFIL_TAPASZTALATOK where " + edzoid;
                 System.out.println(keres4);
@@ -285,11 +289,18 @@ public class EdzoiProfilMegtekintese {
                       System.out.println(oblist6);
                 }
                 var tomb2 = oblist6.toString().split(",");
-                vegzettsegEsTapasztalatokLabel1.setText(tomb2[0].substring(1));
-                vegzettsegEsTapasztalatokLabel2.setText(tomb2[1]);
-                vegzettsegEsTapasztalatokLabel3.setText(tomb2[2].substring(0, tomb2[2].length()-1));
+                vegzettsegEsTapasztalatok.setText(tomb2[0].substring(1) + "\n" + tomb2[1].substring(1) + "\n" + tomb2[2].substring(1, tomb2[2].length()-1));
                 
-                
+                String keres5 = "SELECT * FROM IMAGESTORE where " + name;
+                System.out.println(keres5);
+                Connection con5 = getConnection();
+                Statement st5 = con5.createStatement();
+                ResultSet rs5 = st5.executeQuery(keres5);
+                while(rs5.next())
+                {                             
+                    file = "file:///" + rs5.getString("IMAGE");
+                    image.setImage(new Image(file));
+                }
 
             }
             catch (SQLException | ClassNotFoundException ex)

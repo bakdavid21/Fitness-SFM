@@ -118,8 +118,6 @@ public class Kereses
                 while(rs.next())
                 {                                   
                     oblist.add(new Foglalkozasok(rs.getString("NÉV"), rs.getString("KONDITEREM"), rs.getString("HELYSZIN"), rs.getString("FOGLALKOZAS"), rs.getString("FOGLALKOZASNAPJA"), rs.getString("IDOPONT"), rs.getInt("HANYFO")));
-                    System.out.println(oblist.size());
-                    System.out.println(oblist);
                 } 
 
                 if(oblist.isEmpty())
