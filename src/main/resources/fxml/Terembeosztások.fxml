@@ -10,8 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="882.0" prefWidth="1083.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="hu.unideb.inf.controller.Terembeosztas">
+<AnchorPane id="AnchorPane" prefHeight="882.0" prefWidth="1083.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.Terembeosztas">
    <children>
       <GridPane gridLinesVisible="true" layoutX="1.0" layoutY="1.0" prefHeight="882.0" prefWidth="1083.0">
          <columnConstraints>
@@ -165,7 +164,11 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextArea fx:id="hetfo8" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="hetfo8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
    </children>

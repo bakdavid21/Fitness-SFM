@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,7 +48,7 @@ public class Velemenyek {
     private TableColumn<VelemenyirasModel, String> Foglalkozas;
 
     @FXML
-    private TableColumn<VelemenyirasModel, Integer> Ertekeles;
+    private TableColumn<VelemenyirasModel, Double> Ertekeles;
 
     @FXML
     private TableColumn<VelemenyirasModel, String> Velemeny;
@@ -70,11 +71,14 @@ public class Velemenyek {
             rs = st.executeQuery(keres);
             while(rs.next())
             {                                   
-                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES"), rs.getString("VELEMENY")));
+                System.out.println(rs.getString("BECENEV"));
+                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES") , rs.getString("VELEMENY")));
             } 
         
-            VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
-            EdzoNeve.setCellValueFactory(new PropertyValueFactory<> ("edzonev"));
+            //VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
+            
+            VelemenyezoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getBeceNev()));
+            EdzoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getEdzoNev()));
             Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
             Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));
             Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 

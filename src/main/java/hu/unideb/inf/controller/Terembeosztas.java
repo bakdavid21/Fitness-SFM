@@ -11,6 +11,7 @@ package hu.unideb.inf.controller;
  */
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 
@@ -140,7 +141,11 @@ public class Terembeosztas {
     private TextArea vasarnap18;
 
     @FXML
-    private TextArea hetfo8;
+    private Label hetfo8;
 
+    @FXML
+    private void initalize() {
+        hetfo8.setText("semmi");
+    }
 }
 
