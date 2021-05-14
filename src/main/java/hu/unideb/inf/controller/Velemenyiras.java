@@ -49,7 +49,7 @@ public class Velemenyiras {
     String keres;
     
     ObservableList<String> oblist = FXCollections.observableArrayList();
-    StringBuilder sb;
+    StringBuilder sb = new StringBuilder();
     @FXML
     private void initialize() throws ClassNotFoundException, SQLException 
     {
@@ -85,18 +85,21 @@ public class Velemenyiras {
             keres = "select * from FOGLALKOZASOK where NÉV = '" + velemenyirasChoiceBox.getValue() + "'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(keres);
-               
+            System.out.println(keres);
+            
             while(rs.next())
             {                
                 sb.append(rs.getString("FOGLALKOZAS") + "\n");
             }  
-                
+            
+            System.out.println(sb.toString());
+            
             if(sb == null || sb.indexOf(foglalkozasnevVelemenyiras.getText()) == -1)
             {
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Hiba");
                 alert.setHeaderText(null);
-                alert.setContentText(velemenyirasChoiceBox.getValue() + " nem tart ilyen foglalkozást! Ellenőrizd hogy helyesen írtad-e be!");
+                alert.setContentText(velemenyirasChoiceBox.getValue() + " nem tart ilyen foglalkozást! Az ő általa tartott foglalkozások:\n\n" + sb.toString());
                 alert.showAndWait(); 
             }
             else
@@ -125,6 +128,8 @@ public class Velemenyiras {
                 entityManager.getTransaction().begin();
                 entityManager.persist(velemeny);
                 entityManager.getTransaction().commit(); 
+                
+                sb.delete(0, sb.length());
             }
         }       
         System.out.println(rating.getRating());

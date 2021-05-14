@@ -57,6 +57,12 @@ public class Kereses
 
     @FXML
     private TextField foglalkKeresText;
+
+    @FXML
+    private TextField napKeresText;
+
+    @FXML
+    private TextField letszamKeresText;
     
     @FXML
     private TableView<Foglalkozasok> tableView;
@@ -87,17 +93,21 @@ public class Kereses
     String edzo;
     String ido;
     String foglalk;
+    String nap;
+    String letszam;
 
     @FXML
     void keres(ActionEvent event) 
     {    
         tableView.getItems().clear();
-        //List<String> list = new ArrayList();
+        
         edzo = edzoKeresText.getText().length() != 0 ? " NÉV = '" + edzoKeresText.getText() + "'" : " NÉV IS NOT NULL";
         ido = idopKeresText.getText().length() != 0 ? " AND IDOPONT = '" + idopKeresText.getText() + "'" : " AND IDOPONT IS NOT NULL";
         foglalk = foglalkKeresText.getText().length() != 0 ? " AND FOGLALKOZAS = '" + foglalkKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
+        nap = napKeresText.getText().length() != 0 ? " AND FOGLALKOZASNAPJA = '" + napKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
+        letszam = letszamKeresText.getText().length() != 0 ? " AND HANYFO = '" + letszamKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
         
-        if(edzoKeresText.getText().length() == 0 && idopKeresText.getText().length() == 0 && foglalkKeresText.getText().length() == 0)
+        if(edzoKeresText.getText().length() == 0 && idopKeresText.getText().length() == 0 && foglalkKeresText.getText().length() == 0 && napKeresText.getText().length() == 0 && letszamKeresText.getText().length() == 0 )
         {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Keresés Hiba");
@@ -111,7 +121,7 @@ public class Kereses
             try
             {
                 Connection con = getConnection();
-                String keres = "select * from FOGLALKOZASOK where " + edzo + ido + foglalk;
+                String keres = "select * from FOGLALKOZASOK where " + edzo + ido + foglalk + nap + letszam;
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(keres);
                 
