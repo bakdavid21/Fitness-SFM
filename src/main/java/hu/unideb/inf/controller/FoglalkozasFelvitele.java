@@ -26,13 +26,14 @@ import javafx.scene.control.ChoiceBox;
 
 public class FoglalkozasFelvitele {
     ObservableList<String> foglalkozasnapjaList = FXCollections.observableArrayList( "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap");
-    ObservableList<String> idopontList = FXCollections.observableArrayList("8:00-10:00", "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00", "20:00-22:00");
-
+    ObservableList<String> idopontList = FXCollections.observableArrayList("08:00-10:00", "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00", "20:00-22:00");
+    ObservableList<String> konditeremList = FXCollections.observableArrayList( "1", "2", "3");
+    
    @FXML
     private TextField edzonev;
 
     @FXML
-    private TextField konditeremnev;
+    private ChoiceBox konditeremnev;
 
     @FXML
     private TextField helyszin;
@@ -55,6 +56,7 @@ public class FoglalkozasFelvitele {
         idopont.setValue(" ");
         foglalkozasnapja.setItems(foglalkozasnapjaList);
         idopont.setItems(idopontList);
+        konditeremnev.setItems(konditeremList);
         
     }
     @FXML
@@ -65,13 +67,6 @@ public class FoglalkozasFelvitele {
              error.setTitle("Hibás paraméterezés");
              error.setHeaderText("Hiba");
              error.setContentText("Add meg az edző nevét!");
-             error.show();
-        }
-        if(konditeremnev.getLength() == 0) {
-             Alert error = new Alert(AlertType.ERROR);
-             error.setTitle("Hibás paraméterezés");
-             error.setHeaderText("Hiba");
-             error.setContentText("Add meg a konditermet!");
              error.show();
         }
         if(helyszin.getLength() == 0) {
@@ -117,7 +112,7 @@ public class FoglalkozasFelvitele {
         confirmation.setHeaderText("Adatok ellenőrzése");
         confirmation.setContentText("Biztosan el akarod menteni?\n"
                 + "név: " + edzonev.getText()+ "\n" 
-                + "konditerem: " + konditeremnev.getText() + "\n"
+                + "konditerem: " + konditeremnev.getValue() + "\n"
                 + "helyszín: " + helyszin.getText() + "\n"
                 + "foglalkozás: " + foglalkozas.getText() + "\n"
                 + "foglalkozás napja: " + foglalkozasnapja.getValue() + "\n"
@@ -129,7 +124,7 @@ public class FoglalkozasFelvitele {
                     final EntityManager entityManager = entityManagerFactory.createEntityManager();
                 Foglalkozasok s = new Foglalkozasok();
                 s.setName(edzonev.getText());
-                s.setGym(konditeremnev.getText());
+                s.setGym((String) konditeremnev.getValue());
                 s.setLocation(helyszin.getText());
                 s.setExercise(foglalkozas.getText());
                 s.setDateOfExercise((String) foglalkozasnapja.getValue());

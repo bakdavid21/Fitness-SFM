@@ -60,11 +60,6 @@
                   <Insets right="50.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="konditeremnev" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
             <TextField fx:id="helyszin" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="50.0" />
@@ -90,16 +85,17 @@
                   <Insets right="50.0" />
                </GridPane.margin>
             </TextField>
-            <ChoiceBox fx:id="foglalkozasnapja" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ChoiceBox fx:id="foglalkozasnapja" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets>
             </ChoiceBox>
-            <ChoiceBox fx:id="idopont" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <ChoiceBox fx:id="idopont" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets>
             </ChoiceBox>
+            <ChoiceBox fx:id="konditeremnev" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <Button layoutX="403.0" layoutY="649.0" mnemonicParsing="false" onAction="#mentes" text="Mentés">

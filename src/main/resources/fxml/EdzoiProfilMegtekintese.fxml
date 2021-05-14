@@ -84,12 +84,12 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Rating fx:id="FelhasznaloiPontozas" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextArea fx:id="edzoNev" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.valignment="CENTER" />
-            <TextArea fx:id="szuletesiDatum" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <TextArea fx:id="vegzettsegEsTapasztalatok" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextArea fx:id="Foglalkozasok" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextArea fx:id="bemutatkozas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Rating fx:id="FelhasznaloiPontozas" disable="true" partialRating="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextArea fx:id="edzoNev" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.valignment="CENTER" />
+            <TextArea fx:id="szuletesiDatum" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <TextArea fx:id="vegzettsegEsTapasztalatok" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextArea fx:id="Foglalkozasok" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextArea fx:id="bemutatkozas" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
       <ImageView fx:id="image" fitHeight="237.0" fitWidth="256.0" layoutX="711.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
@@ -110,5 +110,6 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <Label fx:id="imagelabel" layoutX="825.0" layoutY="392.0" />
    </children>
 </AnchorPane>

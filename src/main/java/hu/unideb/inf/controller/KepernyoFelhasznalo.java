@@ -55,8 +55,10 @@ public class KepernyoFelhasznalo {
 
     @FXML
     void TerembeosztasokMegtekinteseButtonAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Terembeosztások.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Konditerem.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) TerembeosztasokMegtekinteseButton.getScene().getWindow();
+        stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setTitle("Terembeosztások megtekintése");
         stage.setScene(scene);

@@ -4,7 +4,10 @@ import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.EdzoiProfil;
 import hu.unideb.inf.model.Foglalkozasok;
 import hu.unideb.inf.model.VelemenyirasModel;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -33,6 +36,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import org.controlsfx.control.Rating;
 /**
  *
@@ -83,12 +88,17 @@ public class EdzoiProfilMegtekintese {
     @FXML
     private ImageView image;
     
+    
+    @FXML
+    private Label ratinglabel;
+    
     ObservableList<EdzoiProfil> oblist = FXCollections.observableArrayList();
     List<EdzoiProfil> oblist2 = new ArrayList();
     ObservableList<String> oblist3 = FXCollections.observableArrayList();
     ObservableList<VelemenyirasModel> oblist4 = FXCollections.observableArrayList();
     ObservableList<String> oblist5 = FXCollections.observableArrayList();
     ObservableList<String> oblist6 = FXCollections.observableArrayList();
+    List<Double> rating = new ArrayList();
    
     String nev;
     String edzonev;
@@ -98,12 +108,6 @@ public class EdzoiProfilMegtekintese {
     @FXML
     private void initialize() throws ClassNotFoundException, SQLException {
         FelhasznaloiPontozas.setRating(0);
-        FelhasznaloiPontozas.setDisable(true);
-        edzoNev.setDisable(true);
-        szuletesiDatum.setDisable(true);
-        Foglalkozasok.setDisable(true);
-        vegzettsegEsTapasztalatok.setDisable(true);
-        bemutatkozas.setDisable(true);
         
         System.out.println("SEMMI");
         Connection con = getConnection();
@@ -149,7 +153,7 @@ public class EdzoiProfilMegtekintese {
     }
     
     @FXML
-    void ProfilMegtekintes(ActionEvent event) throws ClassNotFoundException, SQLException {
+    void ProfilMegtekintes(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
         
         
         
@@ -235,8 +239,8 @@ public class EdzoiProfilMegtekintese {
 
                 while(rs2.next())
                 {                             
-                      oblist4.add(new VelemenyirasModel(rs2.getString("FOGLALKOZAS"), rs2.getDouble("ERTEKELES") , rs2.getString("VELEMENY")));
-
+                    oblist4.add(new VelemenyirasModel(rs2.getString("FOGLALKOZAS"), rs2.getDouble("ERTEKELES") , rs2.getString("VELEMENY")));
+                    rating.add(rs2.getDouble("ERTEKELES"));
                 } 
                 if(oblist4.isEmpty())
                 {
@@ -255,10 +259,12 @@ public class EdzoiProfilMegtekintese {
                     Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 
 
                     VelemenyekTábla.setItems(oblist4);
-                    int szo = oblist4.toString().indexOf("ertekeles") + "ertekeles".length() +1;
-                    int szo2 = oblist4.toString().indexOf("velemeny")-2;
-                    System.out.println(oblist4.toString().substring(szo, szo2));
-                    FelhasznaloiPontozas.setRating(Double.parseDouble(oblist4.toString().substring(szo, szo2)));
+                    double osszeg = 0;
+                    for (var i : rating) {
+                        osszeg += i;
+                    }
+                    FelhasznaloiPontozas.setRating(osszeg/rating.size());
+                    
                     
                 }
                 String edzoid = " EDZOIPROFIL_ID = '" + id + "'";
@@ -298,8 +304,9 @@ public class EdzoiProfilMegtekintese {
                 ResultSet rs5 = st5.executeQuery(keres5);
                 while(rs5.next())
                 {                             
-                    file = "file:///" + rs5.getString("IMAGE");
-                    image.setImage(new Image(file));
+                    InputStream input = rs5.getBinaryStream("IMAGE");
+                    Image imge = new Image(input);
+                    image.setImage(imge);
                 }
 
             }
