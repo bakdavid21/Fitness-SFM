@@ -51,6 +51,13 @@ public class VelemenyirasModel implements Serializable
         this.velemeny = velemeny;
     }
 
+    public VelemenyirasModel(String edzonev)
+    {
+        this.edzonev = edzonev;
+    }
+    
+    
+
     public VelemenyirasModel() 
     {
         

@@ -41,6 +41,8 @@ public class EdzoiProfil implements Serializable {
         this.nev = nev;
     }    
     
+    
+    
     public EdzoiProfil() 
     {
     }
