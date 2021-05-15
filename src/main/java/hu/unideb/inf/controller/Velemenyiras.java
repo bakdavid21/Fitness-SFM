@@ -1,5 +1,6 @@
 package hu.unideb.inf.controller;
 
+
 import hu.unideb.inf.model.EdzoiProfil;
 import hu.unideb.inf.model.VelemenyirasModel;
 import java.sql.Connection;
@@ -15,6 +16,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import static java.lang.String.valueOf;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -42,6 +47,7 @@ public class Velemenyiras {
     
     @FXML
     private ChoiceBox<String> velemenyirasChoiceBox;
+
     
     @FXML
     private Button mentesVelemenyiras;
@@ -147,6 +153,5 @@ public class Velemenyiras {
         Class.forName("org.h2.Driver");
         return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
     }
-
 }
 

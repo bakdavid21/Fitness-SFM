@@ -96,6 +96,7 @@ public class Kereses
     String nap;
     String letszam;
 
+
     @FXML
     void keres(ActionEvent event) 
     {    
@@ -108,6 +109,7 @@ public class Kereses
         letszam = letszamKeresText.getText().length() != 0 ? " AND HANYFO = '" + letszamKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
         
         if(edzoKeresText.getText().length() == 0 && idopKeresText.getText().length() == 0 && foglalkKeresText.getText().length() == 0 && napKeresText.getText().length() == 0 && letszamKeresText.getText().length() == 0 )
+
         {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Keresés Hiba");
@@ -185,6 +187,7 @@ public class Kereses
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);
         stage.show();
@@ -208,7 +211,6 @@ public class Kereses
         tableView.getItems().remove(fog);
         
         System.out.println(fog);
-    } */
-    
+    } */    
 }
 

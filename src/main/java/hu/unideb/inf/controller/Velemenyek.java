@@ -10,6 +10,7 @@ package hu.unideb.inf.controller;
  * @author Peti
  */
 import hu.unideb.inf.MainApp;
+import hu.unideb.inf.model.Foglalkozasok;
 import hu.unideb.inf.model.VelemenyirasModel;
 import java.io.IOException;
 import java.sql.Connection;
@@ -19,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javafx.beans.property.SimpleStringProperty;
+import java.text.DecimalFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -75,6 +77,7 @@ public class Velemenyek {
             EdzoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getEdzoNev()));
             Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
             Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));            
+
             Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 
 
             Velemenyek.setItems(oblist);
@@ -86,6 +89,9 @@ public class Velemenyek {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Velemenyiras.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
+
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();
@@ -108,9 +114,12 @@ public class Velemenyek {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+
         stage.setResizable(false);
         
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();

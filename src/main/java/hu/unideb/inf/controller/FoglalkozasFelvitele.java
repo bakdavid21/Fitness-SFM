@@ -28,12 +28,14 @@ public class FoglalkozasFelvitele {
     ObservableList<String> foglalkozasnapjaList = FXCollections.observableArrayList("Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap");
     ObservableList<String> idopontList = FXCollections.observableArrayList( "08:00-10:00", "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00", "20:00-22:00");
     ObservableList<String> konditeremList = FXCollections.observableArrayList("1", "2", "3");
-    
+
    @FXML
     private TextField edzonev;
 
     @FXML
+
     private ChoiceBox konditeremnev;
+
 
     @FXML
     private TextField helyszin;
@@ -57,6 +59,7 @@ public class FoglalkozasFelvitele {
         foglalkozasnapja.setItems(foglalkozasnapjaList);
         idopont.setItems(idopontList);
         konditeremnev.setItems(konditeremList);
+
         
     }
     @FXML
@@ -106,7 +109,6 @@ public class FoglalkozasFelvitele {
     
             }
         }
-        
     }
            
     @FXML
@@ -117,9 +119,9 @@ public class FoglalkozasFelvitele {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoEdzo.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
-        stage.setResizable(false);
         stage.setTitle("Edzői Profil");
         stage.setScene(scene);
         stage.show();

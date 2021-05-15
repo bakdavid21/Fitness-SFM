@@ -60,6 +60,11 @@
                   <Insets right="50.0" />
                </GridPane.margin>
             </TextField>
+            <TextField fx:id="konditeremnev" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="50.0" />
+               </GridPane.margin>
+            </TextField>
             <TextField fx:id="helyszin" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="50.0" />

@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
@@ -23,6 +24,10 @@ public class KepernyoEdzo {
     
     @FXML
     private Button EdzoiProfilLetrehozasaButton;
+    
+    @FXML
+    private VBox vbox;
+    
 
     @FXML
     void EdzoiProfilLetrehozasaButtonAction(ActionEvent event) throws IOException {
@@ -32,6 +37,7 @@ public class KepernyoEdzo {
         stage2.close();
         Scene scene = new Scene(loader.load());
         stage.setResizable(false);
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Edzői profil létrehozása");
         stage.setScene(scene);
         stage.show();
@@ -48,6 +54,7 @@ public class KepernyoEdzo {
         stage2.close();
         stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Edzői felület");
         stage.setScene(scene);
         stage.show();
@@ -64,10 +71,12 @@ public class KepernyoEdzo {
         stage2.close();
         stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Fitness Terem alkalmazás");
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     private Button foglalkozasKereseseButton;
     
@@ -83,6 +92,5 @@ public class KepernyoEdzo {
         stage.setScene(scene);
         stage.show();
     }
-
 }
 

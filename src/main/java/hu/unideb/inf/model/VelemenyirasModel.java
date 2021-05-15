@@ -66,7 +66,6 @@ public class VelemenyirasModel implements Serializable
     public String toString() {
         return "VelemenyirasModel{" + "id=" + id + ", becenev=" + becenev + ", edzonev=" + edzonev + ", foglalkozas=" + foglalkozas + ", ertekeles=" + ertekeles + ", velemeny=" + velemeny + '}';
     }
-    
 
     public VelemenyirasModel() 
     {
