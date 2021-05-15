@@ -174,6 +174,7 @@ public class Kereses
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);

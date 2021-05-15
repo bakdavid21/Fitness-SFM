@@ -115,6 +115,8 @@ public class Velemenyek {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
+        
         Scene scene = new Scene(loader.load());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);

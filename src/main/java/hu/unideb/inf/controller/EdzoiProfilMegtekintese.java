@@ -119,10 +119,7 @@ public class EdzoiProfilMegtekintese {
         while(rs.next())
         {                                   
             oblist.add(new EdzoiProfil(rs.getString("NÉV")));
-            tomb = oblist.toString().split(",");
-            String nev = tomb[i].toString().substring(5);
-            System.out.println(tomb[i].toString().substring(5));
-            i+=6;
+            nev = rs.getString("NÉV");
             oblist3.add(nev); 
         }  
         ChoiceBox.setItems(oblist3);

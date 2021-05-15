@@ -31,6 +31,7 @@ public class KepernyoEdzo {
         Stage stage2 = (Stage) EdzoiProfilLetrehozasaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        stage.setResizable(false);
         stage.setTitle("Edzői profil létrehozása");
         stage.setScene(scene);
         stage.show();
@@ -45,6 +46,7 @@ public class KepernyoEdzo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) FoglalkozasFelviteleButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Edzői felület");
         stage.setScene(scene);
@@ -60,6 +62,7 @@ public class KepernyoEdzo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Fitness Terem alkalmazás");
         stage.setScene(scene);

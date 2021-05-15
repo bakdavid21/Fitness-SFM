@@ -1,17 +1,17 @@
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Velemenyiras.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\EdzoiProfilMegtekintese.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Kondi1.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Kondi3.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\model\EdzoiProfil.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\model\VelemenyirasModel.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Kezdokepernyo.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Kereses.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\KepernyoFelhasznalo.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Velemenyek.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\FoglalkozasFelvitele.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\EdzoiProfilLetrehozasa.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\MainApp.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Konditermek.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\model\Foglalkozasok.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\Kondi2.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_Sandor (7)\Fitness-SFM-code_Sandor\src\main\java\hu\unideb\inf\controller\KepernyoEdzo.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\KepernyoFelhasznalo.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kezdokepernyo.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Velemenyek.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kondi1.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\EdzoiProfilMegtekintese.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\model\Foglalkozasok.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Velemenyiras.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\model\VelemenyirasModel.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kondi2.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\FoglalkozasFelvitele.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\MainApp.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kondi3.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\KepernyoEdzo.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Konditermek.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\model\EdzoiProfil.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\EdzoiProfilLetrehozasa.java
+C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kereses.java

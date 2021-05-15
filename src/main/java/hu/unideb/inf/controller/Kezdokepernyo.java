@@ -29,6 +29,7 @@ public class Kezdokepernyo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) edzoButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Edzői felület");
         stage.setScene(scene);
@@ -44,6 +45,7 @@ public class Kezdokepernyo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) felhasznaloButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Felhasználói felület");
         stage.setScene(scene);
