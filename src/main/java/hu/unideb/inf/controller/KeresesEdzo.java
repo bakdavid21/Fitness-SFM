@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package hu.unideb.inf.controller;
-
-
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.Foglalkozasok;
 import java.io.IOException;
@@ -25,21 +23,16 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.controlsfx.control.PropertySheet.Item;
 
 /**
  *
- * @author varad
+ * @author Peti
  */
-public class Kereses 
-{
-
+public class KeresesEdzo {
     @FXML
     private TabPane tabPane;
     
@@ -178,19 +171,19 @@ public class Kereses
     private Button VisszaButton;
     
     @FXML
-    void VisszaButtonAction(ActionEvent event) throws IOException 
+    void VisszaButtonAction(ActionEvent event) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoFelhasznalo.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoEdzo.fxml"));
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Felhasználói Profil");
+        stage.setTitle("Edzői profil");
         stage.setScene(scene);
         stage.show();
     }
-
-   /* @FXML
+    
+    @FXML
     void torlesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException 
     {
         int pos = tableView.getSelectionModel().getSelectedIndex();
@@ -208,7 +201,7 @@ public class Kereses
         tableView.getItems().remove(fog);
         
         System.out.println(fog);
-    } */
-    
+    }
+
 }
 

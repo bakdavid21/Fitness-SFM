@@ -36,12 +36,36 @@ public class EdzoiProfil implements Serializable {
         this.bemutatkozas = bemutatkozas;
     }
 
+    @Override
+    public String toString() {
+        return "EdzoiProfil{" + "id=" + id + ", nev=" + nev + ", szuletesiDatum=" + szuletesiDatum + ", tapasztalatok=" + tapasztalatok + ", foglalkozasok=" + foglalkozasok + ", bemutatkozas=" + bemutatkozas + '}';
+    }
+
     public EdzoiProfil(String nev) 
     {
         this.nev = nev;
-    }    
+    }   
+
+    public EdzoiProfil(String nev, String szuletesiDatum, String bemutatkozas) {
+        this.nev = nev;
+        this.szuletesiDatum = szuletesiDatum;
+        this.bemutatkozas = bemutatkozas;
+    }
+
+    public EdzoiProfil(long id, String nev, String szuletesiDatum, String bemutatkozas) {
+        this.id = id;
+        this.nev = nev;
+        this.szuletesiDatum = szuletesiDatum;
+        this.bemutatkozas = bemutatkozas;
+    }
     
+
     
+    public EdzoiProfil(String nev, String szuletesiDatum) 
+    {
+        this.nev = nev;
+        this.szuletesiDatum = szuletesiDatum;
+    }   
     
     public EdzoiProfil() 
     {

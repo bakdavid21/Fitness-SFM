@@ -56,6 +56,16 @@ public class VelemenyirasModel implements Serializable
         this.edzonev = edzonev;
     }
     
+    public VelemenyirasModel(String foglalkozas, double ertekeles, String velemeny) {
+        this.foglalkozas = foglalkozas;
+        this.ertekeles = ertekeles;
+        this.velemeny = velemeny;
+    }
+
+    @Override
+    public String toString() {
+        return "VelemenyirasModel{" + "id=" + id + ", becenev=" + becenev + ", edzonev=" + edzonev + ", foglalkozas=" + foglalkozas + ", ertekeles=" + ertekeles + ", velemeny=" + velemeny + '}';
+    }
     
 
     public VelemenyirasModel() 

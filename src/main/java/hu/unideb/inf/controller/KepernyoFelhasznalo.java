@@ -29,6 +29,7 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) EdzokMegtekinteseButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Edzői profilok megtekintése");
         stage.setScene(scene);
@@ -44,6 +45,7 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) FoglalkozasKereseseButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
@@ -55,8 +57,11 @@ public class KepernyoFelhasznalo {
 
     @FXML
     void TerembeosztasokMegtekinteseButtonAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Terembeosztások.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Konditerem.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) TerembeosztasokMegtekinteseButton.getScene().getWindow();
+        stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Terembeosztások megtekintése");
         stage.setScene(scene);
@@ -72,6 +77,7 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VelemenyekButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Vélemények megtekintése");
         stage.setScene(scene);
@@ -88,6 +94,7 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
         stage.setTitle("Fitness Terem alkalmazás");
         stage.setScene(scene);

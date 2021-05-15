@@ -56,7 +56,6 @@
             <TextField fx:id="edzoKeresText" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Button fx:id="keresButton" mnemonicParsing="false" onAction="#keres" text="Keresés" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Button fx:id="ujraButton" mnemonicParsing="false" onAction="#ujra" prefHeight="25.0" prefWidth="80.0" text="Újra" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" onAction="#torlesButtonAction" text="Törlés" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
             <Label prefHeight="30.0" prefWidth="372.0" style="-fx-font-weight: bold;" text="Foglalkozások keresése" GridPane.columnIndex="3" GridPane.columnSpan="4" GridPane.halignment="CENTER">
                <font>
                   <Font size="20.0" />

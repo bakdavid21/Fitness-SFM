@@ -70,7 +70,7 @@ public class Velemenyek {
             {                                   
                 oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES") , rs.getString("VELEMENY")));
             } 
-                   
+
             VelemenyezoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getBeceNev()));
             EdzoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getEdzoNev()));
             Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
@@ -108,6 +108,8 @@ public class Velemenyek {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
+        
         Scene scene = new Scene(loader.load());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
