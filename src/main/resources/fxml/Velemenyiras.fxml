@@ -16,8 +16,8 @@
    <children>
       <GridPane layoutX="152.0" layoutY="10.0" snapToPixel="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="178.0" prefWidth="204.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="249.0" prefWidth="363.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="178.0" prefWidth="246.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="249.0" prefWidth="351.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="189.0" />
         </columnConstraints>
         <rowConstraints>
@@ -61,17 +61,5 @@
             </Button>
          </children>
       </GridPane>
-      <Label layoutX="50.0" layoutY="212.0" text="Írj róla véleményt:">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Label>
-      <TextArea fx:id="velemenyVelemenyiras" layoutX="-1.0" layoutY="300.0" prefHeight="200.0" prefWidth="752.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0" />
-      <Button fx:id="mentesVelemenyiras" layoutX="332.0" layoutY="456.0" mnemonicParsing="false" onAction="#mentesVelemenyirasAction" prefHeight="32.0" prefWidth="136.0" text="Küldés">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Rating fx:id="rating" layoutX="312.0" layoutY="163.0" partialRating="true" rating="3.0" updateOnHover="true" />
    </children>
 </AnchorPane>

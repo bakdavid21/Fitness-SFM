@@ -213,11 +213,4 @@ public class EdzoiProfilLetrehozasa {
         Class.forName("org.h2.Driver");
         return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
     }
-    
-    private Connection getConnection() throws ClassNotFoundException, SQLException 
-    {
-        Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
-    }
-
 }

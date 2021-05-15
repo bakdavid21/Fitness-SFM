@@ -54,13 +54,16 @@ public class Velemenyiras {
     private void initialize() throws ClassNotFoundException, SQLException 
     {
         Connection con = getConnection();
-        keres = "select * from EdzoiProfil";
+        keres = "select * from FOGLALKOZASOK";
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(keres);
         
         while(rs.next())
-        {                                   
-            oblist.add(rs.getString("NÉV"));
+        {     
+            if(!(oblist.contains(rs.getString("NÉV"))))
+            {
+                oblist.add(rs.getString("NÉV"));
+            }
         }  
         velemenyirasChoiceBox.setItems(oblist);
     }
@@ -81,6 +84,7 @@ public class Velemenyiras {
         }
         else
         { 
+            sb.delete(0, sb.length());
             Connection con = getConnection();
             keres = "select * from FOGLALKOZASOK where NÉV = '" + velemenyirasChoiceBox.getValue() + "'";
             Statement st = con.createStatement();
@@ -88,8 +92,11 @@ public class Velemenyiras {
             System.out.println(keres);
             
             while(rs.next())
-            {                
-                sb.append(rs.getString("FOGLALKOZAS") + "\n");
+            {       
+                if(sb.indexOf(rs.getString("FOGLALKOZAS")) == -1)
+                {
+                    sb.append(rs.getString("FOGLALKOZAS") + "\n");
+                }
             }  
             
             System.out.println(sb.toString());
@@ -99,7 +106,7 @@ public class Velemenyiras {
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Hiba");
                 alert.setHeaderText(null);
-                alert.setContentText(velemenyirasChoiceBox.getValue() + " nem tart ilyen foglalkozást! Az ő általa tartott foglalkozások:\n\n" + sb.toString());
+                alert.setContentText(velemenyirasChoiceBox.getValue() + " nem tart ilyen foglalkozást! Az ő általa tartott foglalkozás(ok):\n\n" + sb.toString());
                 alert.showAndWait(); 
             }
             else

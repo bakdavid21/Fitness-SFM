@@ -1,18 +1,18 @@
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\KepernyoFelhasznalo.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kezdokepernyo.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Velemenyek.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kondi1.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\EdzoiProfilMegtekintese.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\model\Foglalkozasok.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Velemenyiras.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\model\VelemenyirasModel.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kondi2.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\FoglalkozasFelvitele.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\MainApp.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kondi3.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\KepernyoEdzo.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\KeresesEdzo.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Konditermek.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\model\EdzoiProfil.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\EdzoiProfilLetrehozasa.java
-C:\Users\Peti\Desktop\Fitness-SFM-code_PPeti\Fitness-SFM-code_PPeti\src\main\java\hu\unideb\inf\controller\Kereses.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\model\Foglalkozasok.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kondi3.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kereses.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\MainApp.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\KepernyoFelhasznalo.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kondi2.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\KepernyoEdzo.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\model\EdzoiProfil.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Velemenyiras.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\EdzoiProfilLetrehozasa.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\FoglalkozasFelvitele.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\EdzoiProfilMegtekintese.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\KeresesEdzo.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\model\VelemenyirasModel.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kezdokepernyo.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Kondi1.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Konditermek.java
+D:\egyetem\Szoftverfejlesztés mérnököknek\Project\Fitness-SFM\src\main\java\hu\unideb\inf\controller\Velemenyek.java
