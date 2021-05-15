@@ -41,7 +41,6 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="edzonevVelemenyiras" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Foglalkozás :" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                <font>
                   <Font size="26.0" />

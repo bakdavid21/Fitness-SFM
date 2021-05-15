@@ -13,12 +13,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #D1FBFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.EdzoiProfilLetrehozasa">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.EdzoiProfilLetrehozasa">
    <children>
-      <GridPane layoutX="14.0" layoutY="76.0" prefHeight="522.0" prefWidth="695.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="491.0" AnchorPane.topAnchor="50.0">
+      <GridPane layoutX="14.0" layoutY="76.0" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="332.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="332.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="400.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
@@ -91,7 +92,7 @@
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextArea fx:id="Bemutatkozas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextArea fx:id="Bemutatkozas" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets top="5.0" />
                </GridPane.margin>

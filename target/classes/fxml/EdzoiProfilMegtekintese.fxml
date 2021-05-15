@@ -84,7 +84,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Rating fx:id="FelhasznaloiPontozas" disable="true" partialRating="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Rating fx:id="FelhasznaloiPontozas" disable="true" partialRating="true" rating="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextArea fx:id="edzoNev" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.valignment="CENTER" />
             <TextArea fx:id="szuletesiDatum" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <TextArea fx:id="vegzettsegEsTapasztalatok" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />

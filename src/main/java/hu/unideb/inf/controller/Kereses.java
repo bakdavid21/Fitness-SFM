@@ -168,6 +168,8 @@ public class Kereses
         edzoKeresText.clear();
         idopKeresText.clear();
         foglalkKeresText.clear();
+        napKeresText.clear();
+        letszamKeresText.clear();
     }
 
     private Connection getConnection() throws ClassNotFoundException, SQLException 
