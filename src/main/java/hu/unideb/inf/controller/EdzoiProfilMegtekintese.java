@@ -158,7 +158,7 @@ public class EdzoiProfilMegtekintese {
         edzonev = ChoiceBox.getValue().toString().length() != 0 ? " EDZONEV = '" + ChoiceBox.getValue().toString()+ "'" : " EDZONEV IS NOT NULL";
         name = ChoiceBox.getValue().toString().length() != 0 ? " NAME = '" + ChoiceBox.getValue().toString()+ "'" : " NAME IS NOT NULL";
         
-        if(ChoiceBox.getValue().toString().length() == 0 )
+        if(ChoiceBox.getSelectionModel().getSelectedItem().isEmpty() )
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Keresés Hiba");
@@ -186,10 +186,7 @@ public class EdzoiProfilMegtekintese {
                 
                 
                 Connection con = getConnection();
-
                 String keres = "select * from EDZOIPROFIL where" + nev;
-
-                System.out.println(keres);
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(keres);
                 var id=0;
@@ -197,39 +194,13 @@ public class EdzoiProfilMegtekintese {
                 while(rs.next())
                 {                                   
                     oblist2.add(new EdzoiProfil(rs.getString("NÉV"), rs.getString("SZULETESIDATUM"), rs.getString("BEMUTATKOZAS")));
-                    System.out.println(rs.getString("NÉV"));
-                    System.out.println(oblist2.size());
-                    System.out.println(oblist2);
+                    edzoNev.setText(rs.getString("NÉV"));
+                    szuletesiDatum.setText(rs.getString("SZULETESIDATUM"));
+                    bemutatkozas.setText(rs.getString("BEMUTATKOZAS"));
                     id = rs.getInt("ID");
                 } 
-
-                if(oblist2.isEmpty())
-                {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Keresés Hiba");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Nem található edzői profil!");
-
-                    alert.showAndWait();
-                }
-                
-                
-                else
-                {
-                    var tomb = oblist2.toString().split(",");
-                    for (var i : tomb) {
-                        System.out.println(i);
-                    }
-                    String nev = tomb[1].toString().substring(5);
-                    edzoNev.setText(nev);
-                    String szuletesidatum = tomb[2].toString().substring(16);
-                    szuletesiDatum.setText(szuletesidatum);
-                    String bemutatkozas2 = tomb[5].toString().substring(14, tomb[5].length()-2);
-                    bemutatkozas.setText(bemutatkozas2);
-                }
                 
                 String keres2 = "select * from VELEMENYEK where " + edzonev;
-                System.out.println(keres2);
                 Connection con2 = getConnection();
                 Statement st2 = con2.createStatement();
                 ResultSet rs2 = st2.executeQuery(keres2);
@@ -252,9 +223,7 @@ public class EdzoiProfilMegtekintese {
                 {
                     Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
                     Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));
-
                     Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 
-
                     VelemenyekTábla.setItems(oblist4);
                     double osszeg = 0;
                     for (var i : rating) {
@@ -264,9 +233,9 @@ public class EdzoiProfilMegtekintese {
                     
                     
                 }
+                
                 String edzoid = " EDZOIPROFIL_ID = '" + id + "'";
                 String keres3 = "SELECT * FROM EDZOIPROFIL_FOGLALKOZASOK where " + edzoid;
-                System.out.println(keres3);
                 Connection con3 = getConnection();
                 Statement st3 = con3.createStatement();
                 ResultSet rs3 = st3.executeQuery(keres3);
@@ -274,28 +243,25 @@ public class EdzoiProfilMegtekintese {
                 while(rs3.next())
                 {                             
                       oblist5.add(rs3.getString("FOGLALKOZASOK"));
-                      System.out.println(oblist5);
                 } 
 
                 var tomb = oblist5.toString().split(",");
                 Foglalkozasok.setText(tomb[0].substring(1) + "\n" + tomb[1].substring(1) + "\n" + tomb[2].substring(1, tomb[2].length()-1));
                 
                 
+                
                 String keres4 = "SELECT * FROM EDZOIPROFIL_TAPASZTALATOK where " + edzoid;
-                System.out.println(keres4);
                 Connection con4 = getConnection();
                 Statement st4 = con4.createStatement();
                 ResultSet rs4 = st4.executeQuery(keres4);
                 while(rs4.next())
                 {                             
                       oblist6.add(rs4.getString("tapasztalatok"));
-                      System.out.println(oblist6);
                 }
                 var tomb2 = oblist6.toString().split(",");
                 vegzettsegEsTapasztalatok.setText(tomb2[0].substring(1) + "\n" + tomb2[1].substring(1) + "\n" + tomb2[2].substring(1, tomb2[2].length()-1));
                 
                 String keres5 = "SELECT * FROM IMAGESTORE where " + name;
-                System.out.println(keres5);
                 Connection con5 = getConnection();
                 Statement st5 = con5.createStatement();
                 ResultSet rs5 = st5.executeQuery(keres5);

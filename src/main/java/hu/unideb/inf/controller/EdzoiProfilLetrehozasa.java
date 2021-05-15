@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -131,7 +132,15 @@ public class EdzoiProfilLetrehozasa {
     
     @FXML
     void mentesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
-        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
+        if (Nev.getText().length() == 0 || Foglalkozasok1.getText().length() == 0 || Foglalkozasok2.getText().length() == 0 || Foglalkozasok3.getText().length() == 0 || VegzettsegEsTapasztalat1.getText().length() == 0 || VegzettsegEsTapasztalat2.getText().length() == 0 || VegzettsegEsTapasztalat3.getText().length() == 0 || Bemutatkozas.getText().length() == 0 || SzuletesiDatum.getValue().toString().length() == 0) {
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Hibás paraméterezés");
+            error.setHeaderText("Hiba");
+            error.setContentText("Add meg a kért szempontokat!");
+            error.show();
+        }
+        else {
+            final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
         EdzoiProfil edzo = new EdzoiProfil();
         edzo.setNev(Nev.getText());
@@ -186,7 +195,19 @@ public class EdzoiProfilLetrehozasa {
         entityManager.getTransaction().begin();
         entityManager.persist(edzo);
         entityManager.getTransaction().commit(); 
+        Nev.clear();
+        Foglalkozasok1.clear();
+        Foglalkozasok2.clear();
+        Foglalkozasok3.clear();
+        SzuletesiDatum.getEditor().clear();
+        VegzettsegEsTapasztalat1.clear();
+        VegzettsegEsTapasztalat2.clear();
+        VegzettsegEsTapasztalat3.clear();
+        Bemutatkozas.clear();
+        image.setImage(null);
     }
+    
+}
     
     private Connection getConnection() throws ClassNotFoundException, SQLException 
     {
