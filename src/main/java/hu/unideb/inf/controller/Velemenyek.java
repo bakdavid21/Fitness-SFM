@@ -10,7 +10,6 @@ package hu.unideb.inf.controller;
  * @author Peti
  */
 import hu.unideb.inf.MainApp;
-import hu.unideb.inf.model.Foglalkozasok;
 import hu.unideb.inf.model.VelemenyirasModel;
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,7 +19,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
-import javafx.beans.property.ReadOnlyDoubleWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -93,7 +91,8 @@ public class Velemenyek {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Velemenyiras.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Foglalkozások keresése");
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+        stage.setTitle("Vélemény írása");
         stage.setScene(scene);
         stage.show();
     }
@@ -118,6 +117,7 @@ public class Velemenyek {
         stage.setResizable(false);
         
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();

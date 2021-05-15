@@ -55,11 +55,6 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="edzonev" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
             <TextField fx:id="helyszin" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="50.0" />
@@ -80,11 +75,6 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="hanyfo" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
             <ChoiceBox fx:id="foglalkozasnapja" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <opaqueInsets>
                   <Insets right="50.0" />
@@ -96,6 +86,8 @@
                </opaqueInsets>
             </ChoiceBox>
             <ChoiceBox fx:id="konditeremnev" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="hanyfo" maxHeight="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ChoiceBox fx:id="edzonev" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <Button layoutX="403.0" layoutY="649.0" mnemonicParsing="false" onAction="#mentes" text="Mentés">

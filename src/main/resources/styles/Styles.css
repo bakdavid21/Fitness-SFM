@@ -1,0 +1,75 @@
+.button {
+    -fx-font-weight : bold;
+    -fx-background-color: #2196f3;
+    -fx-background-radius: 22;
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+}
+
+.button:hover{
+    -fx-font-weight : bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-font-size: 16;
+    -fx-text-fill: #2196f3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+    -fx-cursor: hand;
+}
+
+.button:pressed{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-fontsize: 22;
+    -fx-text-fill: #5B5A5A;
+    -fx-border-color: #5B5A5A;
+    -fx-border-radius: 5;
+    -fx-border-width: 3;
+    
+}
+
+
+.labelcim {
+    -fx-font-weight: bold;
+    -fx-font-size: 30;
+    -fx-font-family: Times New Roman;
+    -fx-border-style: solid;
+    -fx-border-radius: 20;
+    -fx-background-color:  #AFEEEE;
+    -fx-background-radius: 20;
+}
+
+.labelhosszu {
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-font-family: Times New Roman;
+    -fx-border-style: solid;
+    -fx-border-radius: 20;
+    -fx-background-color:  #AFEEEE;
+    -fx-background-radius: 20;
+}
+
+.root {
+    -fx-background-color: #D1FBFF;
+    -fx-border-style: solid;
+}
+
+.vbox {
+    -fx-background-color: #AFEEEE;
+    -fx-border-style: solid inside;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-spacing: 40;
+    -fx-alignment: center;
+}
+
+#felhaszvbox {
+    -fx-background-color: #AFEEEE;
+    -fx-border-style: solid inside;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-spacing: 30;
+    -fx-alignment: center;
+}

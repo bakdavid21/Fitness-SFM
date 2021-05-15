@@ -31,6 +31,7 @@ public class Konditermek {
         stage2.close();
         stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);
         stage.show();
@@ -41,7 +42,8 @@ public class Konditermek {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Kondi1Beosztas.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Terembeosztások megtekintése");
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+        stage.setTitle("1-es konditerem beosztása");
         stage.setScene(scene);
         stage.show();
     }
@@ -51,7 +53,8 @@ public class Konditermek {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Kondi2Beosztas.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Terembeosztások megtekintése");
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+        stage.setTitle("2-es konditerem beosztása");
         stage.setScene(scene);
         stage.show();
     }
@@ -61,7 +64,8 @@ public class Konditermek {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Kondi3Beosztas.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Terembeosztások megtekintése");
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+        stage.setTitle("3-as konditerem beosztása");
         stage.setScene(scene);
         stage.show();
     }
