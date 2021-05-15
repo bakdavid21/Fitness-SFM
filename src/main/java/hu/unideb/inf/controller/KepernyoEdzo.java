@@ -68,6 +68,21 @@ public class KepernyoEdzo {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    private Button foglalkozasKereseseButton;
+    
+    @FXML
+    void foglalkozasKereseseButtonAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KeresesEdzo.fxml"));
+        Stage stage = new Stage();
+        Stage stage2 = (Stage) foglalkozasKereseseButton.getScene().getWindow();
+        stage2.close();
+        stage.setResizable(false);
+        Scene scene = new Scene(loader.load());
+        stage.setTitle("Edzői felület");
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }
 
