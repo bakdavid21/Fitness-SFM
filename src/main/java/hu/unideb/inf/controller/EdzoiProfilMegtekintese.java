@@ -2,21 +2,16 @@ package hu.unideb.inf.controller;
 
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.EdzoiProfil;
-import hu.unideb.inf.model.Foglalkozasok;
 import hu.unideb.inf.model.VelemenyirasModel;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Blob;
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,18 +21,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import org.controlsfx.control.Rating;
 /**
  *
@@ -109,13 +100,10 @@ public class EdzoiProfilMegtekintese {
     private void initialize() throws ClassNotFoundException, SQLException {
         FelhasznaloiPontozas.setRating(0);
         
-        System.out.println("SEMMI");
         Connection con = getConnection();
         String keres = "select NÉV from EdzoiProfil";
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(keres);
-        String[] tomb;
-        int i = 1;
         while(rs.next())
         {                                   
             oblist.add(new EdzoiProfil(rs.getString("NÉV")));
@@ -160,7 +148,7 @@ public class EdzoiProfilMegtekintese {
         edzonev = ChoiceBox.getValue().toString().length() != 0 ? " EDZONEV = '" + ChoiceBox.getValue().toString()+ "'" : " EDZONEV IS NOT NULL";
         name = ChoiceBox.getValue().toString().length() != 0 ? " NAME = '" + ChoiceBox.getValue().toString()+ "'" : " NAME IS NOT NULL";
         
-        if(ChoiceBox.getSelectionModel().getSelectedItem().isEmpty() )
+        if(ChoiceBox.getValue().isEmpty() )
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Keresés Hiba");
