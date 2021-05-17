@@ -11,20 +11,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import static java.lang.System.in;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
+import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -75,9 +74,18 @@ public class EdzoiProfilLetrehozasa {
     
     File selectedFile;
 
+    
     @FXML
-    void FenykepFeltoltese(ActionEvent event) 
+    private void initialize()
     {
+        System.out.println(System.getProperty("user.dir"));
+        file = "images/noImage.png";
+        image.setImage(new Image(file));
+    }
+    
+    @FXML
+    void FenykepFeltoltese(ActionEvent event) throws FileNotFoundException 
+    {  
         FileChooser fc = new FileChooser();
         
         FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
@@ -88,14 +96,22 @@ public class EdzoiProfilLetrehozasa {
 
         selectedFile = fc.showOpenDialog(null);
         
-        file = "file:///" + selectedFile.toString();
-        file = file.replace("\\","/");
+        if(selectedFile != null)
+        {
+            file = "file:///" + selectedFile.toString();
+            file = file.replace("\\","/");
         
-        System.out.println(selectedFile);
-        System.out.println(file);
+            System.out.println(selectedFile);
+            System.out.println(file);
         
-        image.setImage(new Image(file));
-        
+            image.setImage(new Image(file));
+        }
+        else
+        {
+            selectedFile = new File("images/noImage.png");
+            file = "images/noImage.png";
+            image.setImage(new Image(file));
+        }        
     }
 
     @FXML
@@ -115,58 +131,98 @@ public class EdzoiProfilLetrehozasa {
     }
     
     PreparedStatement preparedStatement;
+    FileInputStream fileInputStream;
     
     @FXML
     void mentesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
-        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
-        final EntityManager entityManager = entityManagerFactory.createEntityManager();
-        EdzoiProfil edzo = new EdzoiProfil();
-        edzo.setNev(Nev.getText());
-        List<String> foglalkozas = List.of(Foglalkozasok1.getText(), Foglalkozasok2.getText(), Foglalkozasok3.getText());
-        edzo.setFoglalkozasok(foglalkozas);
-        List<String> tapasztalat = List.of(VegzettsegEsTapasztalat1.getText(), VegzettsegEsTapasztalat2.getText(), VegzettsegEsTapasztalat3.getText());
-        edzo.setTapasztalatok(tapasztalat);
-        edzo.setSzuletesiDatum(SzuletesiDatum.getValue().toString());
-        edzo.setBemutatkozas(Bemutatkozas.getText());
-        
-        if(file.length() != 0)
-        {
-            Connection conn = null;
-            PreparedStatement preparedStatement = null;
+        if (Nev.getText().length() == 0 || Foglalkozasok1.getText().length() == 0 || Foglalkozasok2.getText().length() == 0 || Foglalkozasok3.getText().length() == 0 || VegzettsegEsTapasztalat1.getText().length() == 0 || VegzettsegEsTapasztalat2.getText().length() == 0 || VegzettsegEsTapasztalat3.getText().length() == 0 || Bemutatkozas.getText().length() == 0 || SzuletesiDatum.getValue().toString().length() == 0) {
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Hibás paraméterezés");
+            error.setHeaderText("Hiba");
+            error.setContentText("Add meg a kért szempontokat!");
+            error.show();
+        }
+        else {
+            Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmation.setTitle("Adatok ellenőrzése");
+            confirmation.setHeaderText("Adatok ellenőrzése");
+            confirmation.setContentText("Biztosan el akarod menteni?\n" 
+                + "\n"
+                + "név: " + Nev.getText()+ "\n" 
+                + "születési dátum: " + SzuletesiDatum.getValue().toString() + "\n"
+                + "foglalkozasok: " + Foglalkozasok1.getText()+ " , " + Foglalkozasok2.getText()+ " , " + Foglalkozasok1.getText()+ "\n"
+                + "foglalkozás: " + VegzettsegEsTapasztalat1.getText()+ " , " + VegzettsegEsTapasztalat2.getText() +" , " + VegzettsegEsTapasztalat3.getText() + "\n"
+                + "bemutatkozas " + Bemutatkozas.getText() + "\n"
+                + "kép: " + file);
+            Optional<ButtonType> result = confirmation.showAndWait();
+            if (result.get() == ButtonType.OK){
+                final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
+                final EntityManager entityManager = entityManagerFactory.createEntityManager();
+                EdzoiProfil edzo = new EdzoiProfil();
+                edzo.setNev(Nev.getText());
+                List<String> foglalkozas = List.of(Foglalkozasok1.getText(), Foglalkozasok2.getText(), Foglalkozasok3.getText());
+                edzo.setFoglalkozasok(foglalkozas);
+                List<String> tapasztalat = List.of(VegzettsegEsTapasztalat1.getText(), VegzettsegEsTapasztalat2.getText(), VegzettsegEsTapasztalat3.getText());
+                edzo.setTapasztalatok(tapasztalat);
+                edzo.setSzuletesiDatum(SzuletesiDatum.getValue().toString());
+                edzo.setBemutatkozas(Bemutatkozas.getText());
+                if(file.length() != 0)
+                {
+                    Connection conn = null;
+                    PreparedStatement preparedStatement = null;
  
-            String createTableQuery = "create table if not exists IMAGESTORE("
+                    String createTableQuery = "create table if not exists IMAGESTORE("
                     + "NAME VARCHAR(255) NOT NULL, "
                     + "IMAGE BLOB NOT NULL, "
                     + "PRIMARY KEY (NAME) )";
  
-            String storeImageQuery ="insert into IMAGESTORE "
-                                            + "values (?,?)";
+                    String storeImageQuery ="insert into IMAGESTORE "
+                                              + "values (?,?)";
             
-            conn = getConnection();
+                    conn = getConnection();
             
-            preparedStatement = conn.prepareStatement(createTableQuery);
+                    preparedStatement = conn.prepareStatement(createTableQuery);
  
-            preparedStatement.execute();
+                    preparedStatement.execute();
             
-            preparedStatement = conn.prepareStatement(storeImageQuery);
+                    preparedStatement = conn.prepareStatement(storeImageQuery);
  
-            FileInputStream fileInputStream = new FileInputStream(selectedFile);
-            preparedStatement.setString(1,Nev.getText());
+                    if(selectedFile != null)
+                    {
+                        fileInputStream = new FileInputStream(selectedFile);
+                    }
+                    else
+                    {
+                        fileInputStream = new FileInputStream("images/noImage.png");
+                    }
+                    preparedStatement.setString(1,Nev.getText());
             
-            preparedStatement.setBinaryStream(2, fileInputStream,fileInputStream.available());
+                    preparedStatement.setBinaryStream(2, fileInputStream,fileInputStream.available());
             
-            preparedStatement.executeUpdate();
+                    preparedStatement.executeUpdate();
             
-            preparedStatement.close();
+                    preparedStatement.close();
             
-            conn.close();
+                    conn.close();
  
-        }
+                }
         
-        entityManager.getTransaction().begin();
-        entityManager.persist(edzo);
-        entityManager.getTransaction().commit(); 
-    }
+                entityManager.getTransaction().begin();
+                entityManager.persist(edzo);
+                entityManager.getTransaction().commit(); 
+                Nev.clear();
+                Foglalkozasok1.clear();
+                Foglalkozasok2.clear();
+                Foglalkozasok3.clear();
+                SzuletesiDatum.getEditor().clear();
+                VegzettsegEsTapasztalat1.clear();
+                VegzettsegEsTapasztalat2.clear();
+                VegzettsegEsTapasztalat3.clear();
+                Bemutatkozas.clear();
+                image.setImage(null);
+            }
+        }
+   }
     
     private Connection getConnection() throws ClassNotFoundException, SQLException 
     {

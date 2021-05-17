@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package hu.unideb.inf.controller;
-
-
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.Foglalkozasok;
 import java.io.IOException;
@@ -32,11 +30,9 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author varad
+ * @author Peti
  */
-public class Kereses 
-{
-
+public class KeresesEdzo {
     @FXML
     private TabPane tabPane;
     
@@ -175,20 +171,21 @@ public class Kereses
     private Button VisszaButton;
     
     @FXML
-    void VisszaButtonAction(ActionEvent event) throws IOException 
+    void VisszaButtonAction(ActionEvent event) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoFelhasznalo.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoEdzo.fxml"));
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
         scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
-        stage.setTitle("Felhasználói Profil");
+
+        stage.setTitle("Edzői profil");
         stage.setScene(scene);
         stage.show();
     }
     
-   /* @FXML
+    @FXML
     void torlesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException 
     {
         int pos = tableView.getSelectionModel().getSelectedIndex();
@@ -206,7 +203,7 @@ public class Kereses
         tableView.getItems().remove(fog);
         
         System.out.println(fog);
-    } */
-    
+    }
+
 }
 
