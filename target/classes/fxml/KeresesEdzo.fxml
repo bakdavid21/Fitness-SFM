@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -12,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.KeresesEdzo">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.KeresesEdzo">
    <children>
       <GridPane layoutX="36.0" layoutY="227.0" prefHeight="927.0" prefWidth="1136.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columnConstraints>
@@ -52,19 +51,16 @@
             <Label text="Edző szerint: " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <TextField fx:id="idopKeresText" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <Label text="Időpont szerint: " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <TextField fx:id="foglalkKeresText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="foglalkKeresText" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Label text="Foglalkozás szerint: " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
             <TextField fx:id="edzoKeresText" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Button fx:id="keresButton" mnemonicParsing="false" onAction="#keres" text="Keresés" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Button fx:id="ujraButton" mnemonicParsing="false" onAction="#ujra" prefHeight="25.0" prefWidth="80.0" text="Újra" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
             <Button mnemonicParsing="false" onAction="#torlesButtonAction" text="Törlés" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Label prefHeight="30.0" prefWidth="372.0" style="-fx-font-weight: bold;" styleClass="labelcim" text="Foglalkozások keresése" GridPane.columnIndex="3" GridPane.columnSpan="4" GridPane.halignment="CENTER">
+            <Label prefHeight="30.0" prefWidth="372.0" style="-fx-font-weight: bold;" text="Foglalkozások keresése" GridPane.columnIndex="3" GridPane.columnSpan="4" GridPane.halignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
-               <padding>
-                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
-               </padding>
             </Label>
             <Button fx:id="VisszaButton" mnemonicParsing="false" onAction="#VisszaButtonAction" text="Vissza" GridPane.halignment="CENTER" />
             <Label prefHeight="17.0" prefWidth="65.0" text="Nap szerint:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
