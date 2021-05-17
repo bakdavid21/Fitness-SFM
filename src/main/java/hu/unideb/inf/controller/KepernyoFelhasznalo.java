@@ -29,7 +29,9 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) EdzokMegtekinteseButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Edzői profilok megtekintése");
         stage.setScene(scene);
         stage.show();
@@ -44,7 +46,9 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) FoglalkozasKereseseButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();
@@ -55,9 +59,13 @@ public class KepernyoFelhasznalo {
 
     @FXML
     void TerembeosztasokMegtekinteseButtonAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Terembeosztások.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Konditerem.fxml"));
         Stage stage = new Stage();
+        Stage stage2 = (Stage) TerembeosztasokMegtekinteseButton.getScene().getWindow();
+        stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Terembeosztások megtekintése");
         stage.setScene(scene);
         stage.show();
@@ -72,7 +80,9 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VelemenyekButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Vélemények megtekintése");
         stage.setScene(scene);
         stage.show();
@@ -88,7 +98,9 @@ public class KepernyoFelhasznalo {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Fitness Terem alkalmazás");
         stage.setScene(scene);
         stage.show();

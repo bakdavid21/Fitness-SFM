@@ -13,7 +13,7 @@
           <TableColumn fx:id="VelemenyezoNeve" prefWidth="155.0" text="Véleményező neve" />
           <TableColumn fx:id="EdzoNeve" prefWidth="163.0" text="Edző neve" />
             <TableColumn fx:id="Foglalkozas" prefWidth="113.0" text="Foglalkozás" />
-            <TableColumn fx:id="Ertekeles" editable="false" prefWidth="82.0" text="Értékelés" />
+            <TableColumn fx:id="Ertekeles" editable="false" prefWidth="82.0" sortType="DESCENDING" text="Értékelés" />
             <TableColumn fx:id="Velemeny" prefWidth="366.0" text="Vélemény" />
         </columns>
       </TableView>

@@ -27,7 +27,7 @@ public class VelemenyirasModel implements Serializable
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
-    @Column (name = "becenev",  nullable = false, unique = false)
+    @Column (name = "becenev", nullable = false, unique = false)
     private String becenev;
     
     @Column (name = "edzonev",  nullable = false, unique = false)
@@ -49,6 +49,22 @@ public class VelemenyirasModel implements Serializable
         this.foglalkozas = foglalkozas;
         this.ertekeles = ertekeles;
         this.velemeny = velemeny;
+    }
+
+    public VelemenyirasModel(String edzonev)
+    {
+        this.edzonev = edzonev;
+    }
+    
+    public VelemenyirasModel(String foglalkozas, double ertekeles, String velemeny) {
+        this.foglalkozas = foglalkozas;
+        this.ertekeles = ertekeles;
+        this.velemeny = velemeny;
+    }
+
+    @Override
+    public String toString() {
+        return "VelemenyirasModel{" + "id=" + id + ", becenev=" + becenev + ", edzonev=" + edzonev + ", foglalkozas=" + foglalkozas + ", ertekeles=" + ertekeles + ", velemeny=" + velemeny + '}';
     }
 
     public VelemenyirasModel() 

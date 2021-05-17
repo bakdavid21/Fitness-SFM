@@ -55,16 +55,6 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="edzonev" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField fx:id="konditeremnev" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
             <TextField fx:id="helyszin" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="50.0" />
@@ -85,21 +75,19 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="hanyfo" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
-            <ChoiceBox fx:id="foglalkozasnapja" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ChoiceBox fx:id="foglalkozasnapja" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets>
             </ChoiceBox>
-            <ChoiceBox fx:id="idopont" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <ChoiceBox fx:id="idopont" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets>
             </ChoiceBox>
+            <ChoiceBox fx:id="konditeremnev" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="hanyfo" maxHeight="-Infinity" prefHeight="37.0" prefWidth="81.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ChoiceBox fx:id="edzonev" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <Button layoutX="403.0" layoutY="649.0" mnemonicParsing="false" onAction="#mentes" text="Mentés">
@@ -107,15 +95,14 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonAction" prefHeight="38.0" prefWidth="115.0" text="Vissza">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
-      <Label layoutX="336.0" layoutY="14.0" style="-fx-font-weight: bold;" text="Adja meg a kért adatokat!">
+      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonAction" prefHeight="37.0" prefWidth="78.0" text="Vissza" />
+      <Label layoutX="286.0" layoutY="8.0" style="-fx-font-weight: bold; -fx-font-size: 22;" styleClass="labelcim" text="Adja meg a kért adatokat!">
          <font>
             <Font size="20.0" />
          </font>
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </padding>
       </Label>
    </children>
    <opaqueInsets>

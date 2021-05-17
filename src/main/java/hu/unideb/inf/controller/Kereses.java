@@ -54,6 +54,12 @@ public class Kereses
 
     @FXML
     private TextField foglalkKeresText;
+
+    @FXML
+    private TextField napKeresText;
+
+    @FXML
+    private TextField letszamKeresText;
     
     @FXML
     private TableView<Foglalkozasok> tableView;
@@ -84,16 +90,21 @@ public class Kereses
     String edzo;
     String ido;
     String foglalk;
+    String nap;
+    String letszam;
 
     @FXML
     void keres(ActionEvent event) 
     {    
-        //List<String> list = new ArrayList();
+        tableView.getItems().clear();
+        
         edzo = edzoKeresText.getText().length() != 0 ? " NÉV = '" + edzoKeresText.getText() + "'" : " NÉV IS NOT NULL";
         ido = idopKeresText.getText().length() != 0 ? " AND IDOPONT = '" + idopKeresText.getText() + "'" : " AND IDOPONT IS NOT NULL";
         foglalk = foglalkKeresText.getText().length() != 0 ? " AND FOGLALKOZAS = '" + foglalkKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
+        nap = napKeresText.getText().length() != 0 ? " AND FOGLALKOZASNAPJA = '" + napKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
+        letszam = letszamKeresText.getText().length() != 0 ? " AND HANYFO = '" + letszamKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
         
-        if(edzoKeresText.getText().length() == 0 && idopKeresText.getText().length() == 0 && foglalkKeresText.getText().length() == 0)
+        if(edzoKeresText.getText().length() == 0 && idopKeresText.getText().length() == 0 && foglalkKeresText.getText().length() == 0 && napKeresText.getText().length() == 0 && letszamKeresText.getText().length() == 0 )
         {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Keresés Hiba");
@@ -107,7 +118,7 @@ public class Kereses
             try
             {
                 Connection con = getConnection();
-                String keres = "select * from REGISTRATION where " + edzo + ido + foglalk;
+                String keres = "select * from FOGLALKOZASOK where " + edzo + ido + foglalk + nap + letszam;
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(keres);
                 
@@ -157,23 +168,45 @@ public class Kereses
     private Connection getConnection() throws ClassNotFoundException, SQLException 
     {
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:file:~/bb_fxml", "sa", "");
     }
     
     @FXML
     private Button VisszaButton;
     
     @FXML
-    void VisszaButtonAction(ActionEvent event) throws IOException {
+    void VisszaButtonAction(ActionEvent event) throws IOException 
+    {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/KepernyoFelhasznalo.fxml"));
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Felhasználói Profil");
         stage.setScene(scene);
         stage.show();
     }
+    
+   /* @FXML
+    void torlesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException 
+    {
+        int pos = tableView.getSelectionModel().getSelectedIndex();
+
+        Foglalkozasok fog = tableView.getItems().get(pos);
+        
+        System.out.println(fog.getTime());
+        
+        Connection con = getConnection();
+        Statement stmt = con.createStatement();
+        String torol = "DELETE FROM FOGLALKOZASOK WHERE NÉV = '" + fog.getName() + "' AND FOGLALKOZAS = '" + fog.getExercise() + "' AND HELYSZIN = '" + fog.getLocation() + "' AND IDOPONT = '" + fog.getTime()+ "' AND FOGLALKOZASNAPJA = '" + fog.getDateOfExercise() + "' AND HANYFO = '" + fog.getAmountOfPeople() + "' AND KONDITEREM = '" + fog.getGym() + "'";
+        int deleteCount = stmt.executeUpdate(torol);
+        
+        fog = tableView.getSelectionModel().getSelectedItem();
+        tableView.getItems().remove(fog);
+        
+        System.out.println(fog);
+    } */
     
 }
 

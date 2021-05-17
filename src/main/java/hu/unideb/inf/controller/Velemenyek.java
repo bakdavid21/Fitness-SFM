@@ -10,7 +10,6 @@ package hu.unideb.inf.controller;
  * @author Peti
  */
 import hu.unideb.inf.MainApp;
-import hu.unideb.inf.model.Foglalkozasok;
 import hu.unideb.inf.model.VelemenyirasModel;
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,6 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,7 +47,7 @@ public class Velemenyek {
     private TableColumn<VelemenyirasModel, String> Foglalkozas;
 
     @FXML
-    private TableColumn<VelemenyirasModel, Integer> Ertekeles;
+    private TableColumn<VelemenyirasModel, Double> Ertekeles;
 
     @FXML
     private TableColumn<VelemenyirasModel, String> Velemeny;
@@ -70,13 +70,16 @@ public class Velemenyek {
             rs = st.executeQuery(keres);
             while(rs.next())
             {                                   
-                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES"), rs.getString("VELEMENY")));
+                DecimalFormat df = new DecimalFormat("#.##");
+                oblist.add(new VelemenyirasModel(rs.getString("BECENEV"), rs.getString("EDZONEV"), rs.getString("FOGLALKOZAS"), rs.getDouble("ERTEKELES") , rs.getString("VELEMENY")));
             } 
         
-            VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
-            EdzoNeve.setCellValueFactory(new PropertyValueFactory<> ("edzonev"));
+            //VelemenyezoNeve.setCellValueFactory(new PropertyValueFactory<> ("becenev"));
+            
+            VelemenyezoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getBeceNev()));
+            EdzoNeve.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getEdzoNev()));
             Foglalkozas.setCellValueFactory(new PropertyValueFactory<> ("foglalkozas"));
-            Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));
+            Ertekeles.setCellValueFactory(new PropertyValueFactory<> ("ertekeles"));            
             Velemeny.setCellValueFactory(new PropertyValueFactory<> ("velemeny")); 
 
             Velemenyek.setItems(oblist);
@@ -88,7 +91,8 @@ public class Velemenyek {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/Velemenyiras.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Foglalkozások keresése");
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+        stage.setTitle("Vélemény írása");
         stage.setScene(scene);
         stage.show();
     }
@@ -96,7 +100,7 @@ public class Velemenyek {
     private Connection getConnection() throws ClassNotFoundException, SQLException 
     {
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:file:~/bb_fxml", "sa", "");
     }
     
     @FXML
@@ -110,7 +114,10 @@ public class Velemenyek {
         Stage stage = new Stage();
         Stage stage2 = (Stage) VisszaButton.getScene().getWindow();
         stage2.close();
+        stage.setResizable(false);
+        
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
         stage.setTitle("Foglalkozások keresése");
         stage.setScene(scene);
         stage.show();

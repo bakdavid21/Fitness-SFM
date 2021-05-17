@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.Konditermek">
+   <children>
+      <Button fx:id="VisszaButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#VisszaButtonActon" text="Vissza" />
+      <VBox layoutX="88.0" layoutY="165.0" prefHeight="200.0" prefWidth="100.0" spacing="40.0" styleClass="vbox" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#kondi1" text="Konditerem 1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#kondi2" text="Konditerem 2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#kondi3" text="Konditerem 3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
