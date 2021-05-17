@@ -93,7 +93,6 @@ public class Kereses
     String nap;
     String letszam;
 
-
     @FXML
     void keres(ActionEvent event) 
     {    
@@ -106,7 +105,6 @@ public class Kereses
         letszam = letszamKeresText.getText().length() != 0 ? " AND HANYFO = '" + letszamKeresText.getText() + "'" : " AND FOGLALKOZAS IS NOT NULL";
         
         if(edzoKeresText.getText().length() == 0 && idopKeresText.getText().length() == 0 && foglalkKeresText.getText().length() == 0 && napKeresText.getText().length() == 0 && letszamKeresText.getText().length() == 0 )
-
         {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Keresés Hiba");
@@ -165,14 +163,12 @@ public class Kereses
         edzoKeresText.clear();
         idopKeresText.clear();
         foglalkKeresText.clear();
-        napKeresText.clear();
-        letszamKeresText.clear();
     }
 
     private Connection getConnection() throws ClassNotFoundException, SQLException 
     {
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:file:~/bb_fxml", "sa", "");
     }
     
     @FXML
@@ -191,7 +187,7 @@ public class Kereses
         stage.setScene(scene);
         stage.show();
     }
-
+    
    /* @FXML
     void torlesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException 
     {
@@ -210,6 +206,7 @@ public class Kereses
         tableView.getItems().remove(fog);
         
         System.out.println(fog);
-    } */    
+    } */
+    
 }
 

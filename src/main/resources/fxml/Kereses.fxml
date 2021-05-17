@@ -52,7 +52,7 @@
             <Label text="Edző szerint: " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <TextField fx:id="idopKeresText" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <Label text="Időpont szerint: " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <TextField fx:id="foglalkKeresText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="foglalkKeresText" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Label text="Foglalkozás szerint: " GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
             <TextField fx:id="edzoKeresText" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Button fx:id="keresButton" mnemonicParsing="false" onAction="#keres" text="Keresés" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
