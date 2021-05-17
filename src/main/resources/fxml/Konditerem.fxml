@@ -15,12 +15,12 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#kondi3" text="Konditerem 3">
+            <Button mnemonicParsing="false" onAction="#kondi2" text="Konditerem 2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#kondi2" text="Konditerem 2">
+            <Button mnemonicParsing="false" onAction="#kondi3" text="Konditerem 3">
                <font>
                   <Font size="20.0" />
                </font>

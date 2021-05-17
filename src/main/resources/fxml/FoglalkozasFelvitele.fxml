@@ -75,19 +75,19 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="foglalkozasnapja" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="81.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ChoiceBox fx:id="foglalkozasnapja" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets>
             </ChoiceBox>
-            <ChoiceBox fx:id="idopont" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="81.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <ChoiceBox fx:id="idopont" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <opaqueInsets>
                   <Insets right="50.0" />
                </opaqueInsets>
             </ChoiceBox>
-            <ChoiceBox fx:id="konditeremnev" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="81.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="hanyfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="81.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <ChoiceBox fx:id="edzonev" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="81.0" styleClass="button" GridPane.columnIndex="1" />
+            <ChoiceBox fx:id="konditeremnev" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="hanyfo" maxHeight="-Infinity" prefHeight="37.0" prefWidth="81.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ChoiceBox fx:id="edzonev" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" styleClass="button" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <Button layoutX="403.0" layoutY="649.0" mnemonicParsing="false" onAction="#mentes" text="Mentés">

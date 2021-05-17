@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.Velemenyiras">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.Velemenyiras">
    <children>
       <GridPane layoutX="152.0" layoutY="10.0" snapToPixel="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -47,7 +47,7 @@
                </font>
             </Label>
             <TextField fx:id="foglalkozasnevVelemenyiras" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ChoiceBox fx:id="velemenyirasChoiceBox" prefHeight="25.0" prefWidth="484.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <ChoiceBox fx:id="velemenyirasChoiceBox" prefHeight="25.0" prefWidth="484.0" styleClass="button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Rating fx:id="rating" partialRating="true" prefHeight="11.0" prefWidth="46.0" rating="3.0" updateOnHover="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <TextArea fx:id="velemenyVelemenyiras" prefHeight="200.0" prefWidth="752.0" promptText="Ide írhatod a véleményed..." wrapText="true" GridPane.columnSpan="3" GridPane.rowIndex="5">
                <font>

@@ -135,7 +135,7 @@ public class EdzoiProfilLetrehozasa {
     
     @FXML
     void mentesButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
-        if (Nev.getText().length() == 0 || Foglalkozasok1.getText().length() == 0 || Foglalkozasok2.getText().length() == 0 || Foglalkozasok3.getText().length() == 0 || VegzettsegEsTapasztalat1.getText().length() == 0 || VegzettsegEsTapasztalat2.getText().length() == 0 || VegzettsegEsTapasztalat3.getText().length() == 0 || Bemutatkozas.getText().length() == 0 || SzuletesiDatum.getValue().toString().length() == 0) {
+        if (Nev.getText().length() == 0 || Foglalkozasok1.getText().length() == 0 || VegzettsegEsTapasztalat1.getText().length() == 0 || Bemutatkozas.getText().length() == 0 || SzuletesiDatum.getValue().toString().length() == 0) {
             Alert error = new Alert(Alert.AlertType.ERROR);
             error.setTitle("Hibás paraméterezés");
             error.setHeaderText("Hiba");
@@ -227,7 +227,7 @@ public class EdzoiProfilLetrehozasa {
     private Connection getConnection() throws ClassNotFoundException, SQLException 
     {
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:file:~/bb_fxml", "sa", "");
     }
 
 }

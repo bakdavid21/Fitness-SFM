@@ -192,25 +192,25 @@ public class Kondi3 {
             oblist.add(new Foglalkozasok(rs.getString("NÉV"), rs.getString("KONDITEREM"), rs.getString("HELYSZIN"), rs.getString("FOGLALKOZAS"), rs.getString("FOGLALKOZASNAPJA"), rs.getString("IDOPONT"), rs.getInt("HANYFO")));
             switch(rs.getString("FOGLALKOZASNAPJA")) {
                 case "Hétfő" : 
-                    hetfo.add(rs.getString("IDOPONT") + rs.getString("FOGLALKOZAS") + "-" + rs.getString("HELYSZIN")+ "\n");
+                    hetfo.add(rs.getString("IDOPONT") + "Foglalkozás:" + rs.getString("FOGLALKOZAS") + "-" + "Helyszín:" + rs.getString("HELYSZIN")+"-" + "Edző:" + rs.getString("NÉV") + "\n");
                     break;
                 case "Kedd" : 
-                    kedd.add(rs.getString("IDOPONT") + rs.getString("FOGLALKOZAS") + "-" + rs.getString("HELYSZIN")+ "\n");
+                    kedd.add(rs.getString("IDOPONT") + "Foglalkozás:" + rs.getString("FOGLALKOZAS") + "-" + "Helyszín:" + rs.getString("HELYSZIN")+"-" + "Edző:" + rs.getString("NÉV") + "\n");
                     break;
                 case "Szerda" : 
-                    szerda.add(rs.getString("IDOPONT") + rs.getString("FOGLALKOZAS") + "-" + rs.getString("HELYSZIN")+ "\n");
+                    szerda.add(rs.getString("IDOPONT") + "Foglalkozás:" + rs.getString("FOGLALKOZAS") + "-" + "Helyszín:" + rs.getString("HELYSZIN")+"-" + "Edző:" + rs.getString("NÉV") + "\n");
                     break;
                 case "Csütörtök" : 
-                    csutortok.add(rs.getString("IDOPONT") + rs.getString("FOGLALKOZAS") + "-" + rs.getString("HELYSZIN")+ "\n");
+                    csutortok.add(rs.getString("IDOPONT") + "Foglalkozás:" + rs.getString("FOGLALKOZAS") + "-" + "Helyszín:" + rs.getString("HELYSZIN")+"-" + "Edző:" + rs.getString("NÉV") + "\n");
                     break;
                 case "Péntek" : 
-                    pentek.add(rs.getString("IDOPONT") + rs.getString("FOGLALKOZAS") + "-" + rs.getString("HELYSZIN")+ "\n");
+                    pentek.add(rs.getString("IDOPONT") + "Foglalkozás:" + rs.getString("FOGLALKOZAS") + "-" + "Helyszín:" + rs.getString("HELYSZIN")+"-" + "Edző:" + rs.getString("NÉV") + "\n");
                     break;
                 case "Szombat" : 
-                    szombat.add(rs.getString("IDOPONT") + rs.getString("FOGLALKOZAS") + "-" + rs.getString("HELYSZIN")+ "\n");
+                    szombat.add(rs.getString("IDOPONT") + "Foglalkozás:" + rs.getString("FOGLALKOZAS") + "-" + "Helyszín:" + rs.getString("HELYSZIN")+"-" + "Edző:" + rs.getString("NÉV") + "\n");
                     break;
                 case "Vasárnap" : 
-                    vasarnap.add(rs.getString("IDOPONT") + rs.getString("FOGLALKOZAS") + "-" + rs.getString("HELYSZIN")+ "\n");
+                    vasarnap.add(rs.getString("IDOPONT") + "Foglalkozás:" + rs.getString("FOGLALKOZAS") + "-" + "Helyszín:" + rs.getString("HELYSZIN")+"-" + "Edző:" + rs.getString("NÉV") + "\n");
                     break;
                 default :
                     break;
@@ -395,6 +395,6 @@ public class Kondi3 {
     private Connection getConnection() throws ClassNotFoundException, SQLException 
     {
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:file:~/aa_fxml", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:file:~/bb_fxml", "sa", "");
     }
 }
